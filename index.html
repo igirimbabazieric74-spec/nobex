@@ -3,28 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-adsense-account" content="ca-pub-2010609216863568">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2010609216863568" crossorigin="anonymous"></script>
   
-  <title>I.E. Tomagrove | Fresh Tomatoes in Kigali, Rwanda</title>
-  <meta name="description" content="I.E. Tomagrove is a tomato farming business in Kigali, Gasabo, Rutunga, Rukerereza. Fresh quality tomatoes for households, restaurants, retailers & wholesalers. CEO: IGIRIMBABAZI ERIC.">
-  <meta name="keywords" content="Tomatoes Rwanda, Fresh Tomatoes Kigali, Tomato Farming, I.E. Tomagrove, IGIRIMBABAZI ERIC">
+  <!-- SEO & META TAGS -->
+  <title>I.E. Tomagrove | Fresh Tomato Farming in Kigali, Rwanda</title>
+  <meta name="description" content="I.E. Tomagrove is a growing tomato farming business in Kigali, Gasabo, Rutunga, Rukerereza. We supply fresh, quality tomatoes to households, restaurants, retailers, and wholesalers. CEO: IGIRIMBABAZI ERIC.">
+  <meta name="keywords" content="Tomatoes Rwanda, Fresh Tomatoes Kigali, Tomato Farming, I.E. Tomagrove, IGIRIMBABAZI ERIC, Gasabo Rutunga Rukerereza, Tomato Supply, Smart Agriculture Rwanda">
   <meta name="author" content="IGIRIMBABAZI ERIC">
   
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="I.E. Tomagrove | Fresh Tomatoes in Kigali, Rwanda">
-  <meta property="og:description" content="Fresh Tomatoes. Healthy Future. Premium tomato farming in Kigali, Rwanda.">
+  <meta property="og:url" content="https://www.tomagrove.vercel.app">
+  <meta property="og:title" content="I.E. Tomagrove | Fresh Tomato Farming in Kigali, Rwanda">
+  <meta property="og:description" content="Fresh Tomatoes. Healthy Future. Premium tomato farming in Kigali, Rwanda. Located in Gasabo, Rutunga, Rukerereza.">
   <meta property="og:image" content="https://www.tomagrove.vercel.app/assets/eric-profile.png">
+  <meta property="og:image:alt" content="IGIRIMBABAZI ERIC, CEO and founder of I.E. Tomagrove">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="I.E. Tomagrove | Fresh Tomato Farming in Kigali, Rwanda">
+  <meta name="twitter:description" content="Fresh Tomatoes. Healthy Future. Tomato farming and fresh tomato supply in Kigali, Rwanda.">
+  <meta name="twitter:image" content="https://www.tomagrove.vercel.app/assets/eric-profile.png">
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='55' r='35' fill='%23E53935'/><path d='M50 20 Q40 10 30 20 Q45 25 50 20 Z' fill='%233F8F45'/><path d='M50 20 Q60 10 70 20 Q55 25 50 20 Z' fill='%233F8F45'/></svg>">
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='55' r='35' fill='%23E53935'/><path d='M50 20 Q40 10 30 20 Q45 25 50 20 Z' fill='%233F8F45'/><path d='M50 20 Q60 10 70 20 Q55 25 50 20 Z' fill='%233F8F45'/><path d='M50 15 Q50 5 45 10 Q55 10 50 15 Z' fill='%233F8F45'/><circle cx='40' cy='45' r='5' fill='%23ff8a80' opacity='0.6'/></svg>">
   
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <style>
-    /* ========== THEME & VARIABLES ========== */
+    /* ============================================================
+       CSS VARIABLES & THEME
+       ============================================================ */
     :root {
       --forest: #123D2A;
       --fresh: #3F8F45;
@@ -34,13 +44,13 @@
       --dark: #17251D;
       --light-gray: #f4f1ea;
       --white: #ffffff;
-      --shadow-sm: 0 4px 10px rgba(0,0,0,0.05);
-      --shadow-md: 0 8px 20px rgba(0,0,0,0.08);
-      --shadow-lg: 0 16px 32px rgba(0,0,0,0.12);
-      --radius: 14px;
-      --radius-sm: 10px;
-      --nav-height: 64px;
-      --transition: 0.3s ease;
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.10);
+      --shadow-lg: 0 20px 48px rgba(0,0,0,0.14);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --transition: 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+      --nav-height: 76px;
     }
 
     [data-theme="dark"] {
@@ -52,109 +62,152 @@
       --dark: #e8f0e4;
       --light-gray: #1a261e;
       --white: #0f1611;
-      --shadow-sm: 0 4px 10px rgba(0,0,0,0.3);
-      --shadow-md: 0 8px 20px rgba(0,0,0,0.4);
-      --shadow-lg: 0 16px 32px rgba(0,0,0,0.5);
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.4);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.5);
+      --shadow-lg: 0 20px 48px rgba(0,0,0,0.6);
     }
 
-    /* ========== RESET & BASE ========== */
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 16px); }
+
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 20px); }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--cream);
       color: var(--dark);
-      line-height: 1.5;
+      line-height: 1.6;
       overflow-x: hidden;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.4s, color 0.4s;
     }
+
     h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
     img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; cursor: pointer; border: none; background: none; }
     ul { list-style: none; }
 
-    /* ========== SCROLL PROGRESS ========== */
+    /* ============================================================
+       SCROLL PROGRESS
+       ============================================================ */
     #scroll-progress {
-      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      position: fixed; top: 0; left: 0; height: 4px; width: 0%;
       background: linear-gradient(90deg, var(--fresh), var(--gold), var(--tomato));
-      z-index: 10001;
-      transition: width 0.1s linear;
+      z-index: 10001; transition: width 0.1s linear;
     }
 
-    /* ========== NAVBAR ========== */
+    /* ============================================================
+       NAVIGATION (Highly Responsive)
+       ============================================================ */
     .navbar {
       position: sticky; top: 0; z-index: 1000;
       height: var(--nav-height);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 4%;
-      background: rgba(255, 253, 246, 0.96);
+      background: rgba(255, 253, 246, 0.95);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(18, 61, 42, 0.08);
-      transition: background 0.3s, box-shadow 0.3s;
+      transition: background 0.4s, box-shadow 0.3s;
     }
-    [data-theme="dark"] .navbar { background: rgba(18, 26, 20, 0.96); }
+    [data-theme="dark"] .navbar { background: rgba(18, 26, 20, 0.95); }
     .navbar.scrolled { box-shadow: var(--shadow-sm); }
 
-    .nav-logo svg {
-      width: 36px; height: 36px;
-      filter: drop-shadow(0 3px 6px rgba(229, 57, 53, 0.25));
-      transition: transform 0.3s;
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 800; font-size: 1.3rem;
+      color: var(--forest); letter-spacing: -0.5px;
+      transition: color 0.3s;
+      flex-shrink: 0;
     }
-    .nav-logo:hover svg { transform: rotate(-10deg) scale(1.08); }
+    [data-theme="dark"] .nav-logo { color: var(--fresh); }
 
-    .nav-links { display: flex; gap: 1rem; align-items: center; }
+    /* Custom Premium Tomato Logo */
+    .custom-tomato-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.4rem;
+      color: var(--forest);
+    }
+    .custom-tomato-logo svg {
+      width: 48px;
+      height: 48px;
+      filter: drop-shadow(0 4px 8px rgba(229, 57, 53, 0.3));
+      transition: transform 0.3s ease;
+    }
+    .custom-tomato-logo:hover svg {
+      transform: rotate(-10deg) scale(1.05);
+    }
+    [data-theme="dark"] .custom-tomato-logo {
+      color: var(--dark);
+    }
+
+    .nav-links {
+      display: flex; gap: 1.2rem; align-items: center;
+      flex-wrap: nowrap;
+    }
     .nav-links a {
-      font-size: 0.82rem; font-weight: 500;
-      color: var(--dark); opacity: 0.75;
-      position: relative; padding: 4px 0;
+      font-size: 0.9rem; font-weight: 500;
+      color: var(--dark); opacity: 0.8;
+      position: relative; padding: 6px 0;
       transition: opacity 0.3s, color 0.3s;
       white-space: nowrap;
     }
     .nav-links a::after {
       content: ''; position: absolute; bottom: 0; left: 0;
       width: 0; height: 2px; background: var(--tomato);
-      transition: width 0.3s;
+      transition: width 0.3s var(--transition);
     }
     .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--tomato); }
     .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
-    .nav-actions { display: flex; align-items: center; gap: 0.5rem; }
+    .nav-actions {
+      display: flex; align-items: center; gap: 0.6rem;
+      flex-shrink: 0;
+    }
 
-    .theme-toggle {
-      width: 32px; height: 32px; border-radius: 50%;
+    .theme-toggle, .lang-toggle {
+      width: 36px; height: 36px; border-radius: 50%;
       display: grid; place-items: center;
       background: var(--light-gray); color: var(--dark);
-      font-size: 0.8rem; transition: all 0.3s;
+      font-size: 0.9rem; transition: all 0.3s;
     }
-    .theme-toggle:hover { background: var(--fresh); color: #fff; transform: scale(1.08); }
+    .theme-toggle:hover, .lang-toggle:hover {
+      background: var(--fresh); color: #fff; transform: scale(1.08);
+    }
+    .lang-toggle { font-weight: 700; font-size: 0.75rem; }
 
     .btn-primary {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--tomato); color: #fff;
-      padding: 0.5rem 1rem; border-radius: 50px;
-      font-weight: 600; font-size: 0.8rem;
+      padding: 0.6rem 1.2rem; border-radius: 50px;
+      font-weight: 600; font-size: 0.85rem;
       box-shadow: 0 4px 14px rgba(229, 57, 53, 0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     }
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(229, 57, 53, 0.4);
+      background: #c62828;
     }
 
     .btn-outline {
       display: inline-flex; align-items: center; gap: 8px;
       border: 2px solid var(--fresh); color: var(--fresh);
-      padding: 0.5rem 1.1rem; border-radius: 50px;
-      font-weight: 600; font-size: 0.82rem;
+      padding: 0.6rem 1.4rem; border-radius: 50px;
+      font-weight: 600; font-size: 0.9rem;
       transition: all 0.3s;
     }
     .btn-outline:hover { background: var(--fresh); color: #fff; }
 
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
-      width: 32px; height: 32px; justify-content: center; align-items: center;
+      width: 36px; height: 36px; justify-content: center; align-items: center;
+      border-radius: 8px; transition: background 0.3s;
     }
     .hamburger span {
       width: 20px; height: 2.5px; background: var(--dark);
@@ -164,60 +217,69 @@
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
+    /* Mobile Nav */
     .mobile-nav {
       position: fixed; top: var(--nav-height); left: 0; right: 0;
       background: var(--cream); z-index: 999;
-      padding: 1.2rem 5%; display: flex; flex-direction: column; gap: 0.6rem;
+      padding: 1.5rem 5%; display: flex; flex-direction: column; gap: 1rem;
       transform: translateY(-120%); transition: transform 0.4s var(--transition);
       box-shadow: var(--shadow-lg); max-height: calc(100vh - var(--nav-height));
       overflow-y: auto;
     }
     .mobile-nav.open { transform: translateY(0); }
     .mobile-nav a {
-      font-size: 0.95rem; font-weight: 500; padding: 0.5rem 0;
+      font-size: 1.05rem; font-weight: 500; padding: 0.6rem 0;
       border-bottom: 1px solid rgba(18,61,42,0.08); color: var(--dark);
     }
     .mobile-nav a:hover { color: var(--tomato); }
 
-    /* ========== HERO ========== */
+    /* ============================================================
+       HERO SECTION
+       ============================================================ */
     .hero {
-      position: relative; min-height: 78vh;
+      position: relative; min-height: 92vh;
       display: flex; align-items: center;
-      padding: 2.5rem 6% 4.5rem;
-      background: linear-gradient(135deg, rgba(18,61,42,0.92), rgba(18,61,42,0.78)),
+      padding: 4rem 7% 6rem;
+      background: linear-gradient(135deg, rgba(18,61,42,0.92), rgba(18,61,42,0.75)),
         url('assets/harvesting.png') center/cover no-repeat;
       background-attachment: fixed;
       overflow: hidden; color: #fff;
     }
+
     .hero::after {
       content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
-      height: 70px; background: var(--cream);
+      height: 120px; background: var(--cream);
       clip-path: ellipse(75% 100% at 50% 100%);
+      transition: background 0.4s;
     }
+    [data-theme="dark"] .hero::after { background: var(--cream); }
 
-    .hero-content { position: relative; z-index: 2; max-width: 640px; }
+    .hero-content { position: relative; z-index: 2; max-width: 760px; }
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
-      padding: 0.35rem 0.9rem; border-radius: 50px;
-      font-size: 0.7rem; font-weight: 500; letter-spacing: 1px;
-      text-transform: uppercase; margin-bottom: 1rem;
+      padding: 0.5rem 1.1rem; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 1.5rem;
       border: 1px solid rgba(255,255,255,0.25);
+      animation: fadeInUp 0.8s both;
     }
     .hero-badge i { color: var(--gold); }
 
     .hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3.4rem);
-      font-weight: 800; line-height: 1.1;
-      margin-bottom: 0.7rem; letter-spacing: -1px;
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      font-weight: 800; line-height: 1.08;
+      margin-bottom: 1rem; letter-spacing: -1.5px;
       text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+      animation: fadeInUp 0.8s 0.1s both;
     }
 
     .hero-typewriter {
-      font-size: clamp(0.95rem, 1.8vw, 1.2rem);
-      font-weight: 400; margin-bottom: 0.9rem;
-      color: var(--gold); min-height: 1.9rem;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      font-weight: 400; margin-bottom: 1.2rem;
+      color: var(--gold); min-height: 2.2rem;
+      animation: fadeInUp 0.8s 0.2s both;
     }
     .hero-typewriter .cursor {
       display: inline-block; width: 2px; height: 1.1em;
@@ -226,144 +288,238 @@
     }
 
     .hero p.hero-sub {
-      font-size: 0.95rem; color: rgba(255,255,255,0.85);
-      max-width: 520px; margin-bottom: 1.6rem;
+      font-size: 1.08rem; color: rgba(255,255,255,0.85);
+      max-width: 580px; margin-bottom: 2.2rem;
+      animation: fadeInUp 0.8s 0.3s both;
     }
 
-    .hero-buttons { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+    .hero-buttons {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.8s 0.4s both;
+    }
+    .hero-buttons .btn-primary { background: var(--tomato); }
     .hero-buttons .btn-outline { border-color: #fff; color: #fff; }
     .hero-buttons .btn-outline:hover { background: #fff; color: var(--forest); }
 
     .hero-location {
       display: flex; align-items: center; gap: 8px;
-      font-size: 0.8rem; color: rgba(255,255,255,0.8);
+      font-size: 0.9rem; color: rgba(255,255,255,0.8);
+      animation: fadeInUp 0.8s 0.5s both;
     }
     .hero-location i { color: var(--gold); }
 
+    .hero-cards {
+      position: absolute; right: 5%; bottom: 18%;
+      display: flex; flex-direction: column; gap: 1rem; z-index: 3;
+    }
+    .hero-float-card {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1.2rem; display: flex; align-items: center; gap: 12px;
+      color: #fff; min-width: 210px;
+      animation: floatCard 6s ease-in-out infinite;
+      transition: transform 0.3s;
+    }
+    .hero-float-card:nth-child(2) { animation-delay: -3s; }
+    .hero-float-card:hover { transform: scale(1.05); }
+    .hero-float-card i {
+      font-size: 1.4rem; color: var(--gold);
+      width: 40px; height: 40px; display: grid; place-items: center;
+      background: rgba(214,168,79,0.18); border-radius: 10px;
+    }
+    .hero-float-card .fc-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+    .hero-float-card .fc-value { font-size: 0.95rem; font-weight: 600; }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @keyframes blink { 50% { opacity: 0; } }
 
-    /* ========== SECTION SHARED ========== */
-    section { padding: 3rem 6%; position: relative; }
+    /* ============================================================
+       SECTION SHARED STYLES
+       ============================================================ */
+    section { padding: 5rem 7%; position: relative; }
 
-    .section-header { text-align: center; max-width: 680px; margin: 0 auto 2rem; }
+    .section-header { text-align: center; max-width: 760px; margin: 0 auto 3rem; }
 
     .section-tag {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 2px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 2px;
       text-transform: uppercase; color: var(--fresh);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
     }
     .section-tag::before, .section-tag::after {
-      content: ''; width: 20px; height: 1px; background: var(--fresh);
+      content: ''; width: 30px; height: 1px; background: var(--fresh);
     }
 
     .section-title {
-      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 800; color: var(--forest);
-      margin-bottom: 0.6rem; letter-spacing: -0.5px;
+      margin-bottom: 1rem; letter-spacing: -0.5px;
     }
     [data-theme="dark"] .section-title { color: var(--dark); }
 
-    .section-desc { font-size: 0.9rem; opacity: 0.72; }
+    .section-desc { font-size: 1.02rem; color: var(--dark); opacity: 0.75; }
 
     .reveal {
-      opacity: 0; transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ========== ABOUT ========== */
-    .about-container {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2rem; max-width: 1000px; margin: 0 auto; align-items: center;
-    }
-    .about-image {
-      border-radius: var(--radius); overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-    .about-image img {
-      width: 100%; height: 360px; object-fit: cover;
-      transition: transform 0.6s;
-    }
-    .about-image:hover img { transform: scale(1.04); }
-
-    .about-text h3 { font-size: 1.4rem; color: var(--forest); margin-bottom: 0.6rem; }
-    [data-theme="dark"] .about-text h3 { color: var(--fresh); }
-    .about-text > p { font-size: 0.9rem; line-height: 1.7; opacity: 0.85; margin-bottom: 1.2rem; }
-
-    .mv-grid { display: flex; flex-direction: column; gap: 0.8rem; }
-    .mv-card {
-      background: var(--light-gray); padding: 1rem;
-      border-radius: var(--radius-sm); border-left: 4px solid var(--tomato);
-      transition: transform 0.3s;
-    }
-    .mv-card:hover { transform: translateX(4px); }
-    .mv-card h4 {
-      font-size: 0.95rem; margin-bottom: 0.3rem;
-      display: flex; align-items: center; gap: 8px; color: var(--forest);
-    }
-    [data-theme="dark"] .mv-card h4 { color: var(--dark); }
-    .mv-card h4 i { color: var(--tomato); }
-    .mv-card p { font-size: 0.82rem; margin: 0; opacity: 0.8; }
-
-    /* ========== SLIDESHOW ========== */
+    /* ============================================================
+       AUTO 3D SLIDESHOW
+       ============================================================ */
     .slideshow-wrap {
       display: flex; flex-direction: column; align-items: center;
-      perspective: 1400px;
+      perspective: 1400px; margin-top: 1rem;
     }
     .slideshow-stage {
-      position: relative; width: 100%; height: 320px;
+      position: relative; width: 100%; height: 380px;
       display: flex; justify-content: center; align-items: center;
       perspective: 1600px;
     }
     .slideshow-carousel {
-      position: relative; width: 200px; height: 270px;
+      position: relative; width: 260px; height: 330px;
       transform-style: preserve-3d;
       transition: transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
     }
     .slide-card {
       position: absolute; inset: 0; border-radius: var(--radius);
       overflow: hidden; backface-visibility: hidden;
-      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.4);
-      transform: rotateY(calc(var(--i) * 72deg)) translateZ(260px);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
+      transform: rotateY(calc(var(--i) * 72deg)) translateZ(320px);
       background: var(--light-gray);
     }
-    .slide-card img { width: 100%; height: 100%; object-fit: cover; }
+    .slide-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s, filter 0.4s;
+    }
+    .slide-card:hover img { transform: scale(1.08); filter: saturate(1.2); }
     .slide-overlay {
       position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 1.2rem 0.8rem 0.8rem;
+      padding: 2rem 1.2rem 1.2rem;
       background: linear-gradient(to top, rgba(0,0,0,0.88), transparent);
       color: #fff;
     }
-    .slide-overlay h3 { font-size: 1rem; margin-bottom: 0.15rem; }
-    .slide-overlay p { font-size: 0.72rem; opacity: 0.85; }
+    .slide-overlay h3 { font-size: 1.35rem; margin-bottom: 0.2rem; }
+    .slide-overlay p { font-size: 0.85rem; opacity: 0.85; }
 
-    .slideshow-controls { display: flex; gap: 1rem; margin-top: 1.5rem; }
+    .slideshow-controls {
+      display: flex; gap: 1.2rem; margin-top: 2.2rem;
+    }
     .slideshow-controls button {
-      width: 42px; height: 42px; border-radius: 50%;
+      width: 52px; height: 52px; border-radius: 50%;
       background: var(--white); color: var(--forest);
       border: 1px solid rgba(18,61,42,0.12);
-      box-shadow: var(--shadow-sm); font-size: 0.95rem;
+      box-shadow: var(--shadow-sm); font-size: 1.1rem;
       transition: all 0.3s;
     }
     .slideshow-controls button:hover {
       background: var(--tomato); color: #fff; transform: scale(1.1);
+      box-shadow: 0 10px 24px rgba(229,57,53,0.4);
     }
     .auto-indicator {
-      margin-top: 0.8rem; font-size: 0.75rem; opacity: 0.6;
+      margin-top: 1rem; font-size: 0.82rem; opacity: 0.6;
       display: flex; align-items: center; gap: 6px;
     }
     .auto-indicator i { animation: spin 2.5s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ========== PRODUCTS ========== */
+    /* ============================================================
+       ABOUT SECTION (Updated Layout)
+       ============================================================ */
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .about-image-hero {
+      width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .about-image-hero img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.6s ease;
+    }
+    .about-image-hero:hover img {
+      transform: scale(1.03);
+    }
+    .about-text-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .about-main-text h3 {
+      font-size: 2rem;
+      color: var(--forest);
+      margin-bottom: 1rem;
+    }
+    [data-theme="dark"] .about-main-text h3 { color: var(--fresh); }
+    .about-main-text p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+    }
+    .mission-vision {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .mv-card {
+      background: var(--light-gray);
+      padding: 1.5rem;
+      border-radius: var(--radius-sm);
+      border-left: 5px solid var(--tomato);
+      transition: transform 0.3s;
+    }
+    .mv-card:hover {
+      transform: translateX(5px);
+    }
+    .mv-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--forest);
+    }
+    [data-theme="dark"] .mv-card h4 { color: var(--dark); }
+    .mv-card h4 i { color: var(--tomato); }
+    .mv-card p {
+      font-size: 0.95rem;
+      margin: 0;
+      opacity: 0.8;
+    }
+
+    /* ============================================================
+       PRODUCTS SECTION
+       ============================================================ */
     .filter-bar {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem;
-      margin-bottom: 2rem;
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem;
+      margin-bottom: 2.5rem;
     }
     .filter-btn {
-      padding: 0.45rem 1.1rem; border-radius: 50px;
-      font-size: 0.8rem; font-weight: 500;
+      padding: 0.55rem 1.3rem; border-radius: 50px;
+      font-size: 0.88rem; font-weight: 500;
       background: var(--light-gray); color: var(--dark);
       transition: all 0.3s;
     }
@@ -372,98 +528,253 @@
     }
 
     .products-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.3rem; max-width: 1150px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.8rem;
     }
+
     .product-card {
       background: var(--white); border-radius: var(--radius);
       overflow: hidden; box-shadow: var(--shadow-sm);
-      transition: transform 0.4s, box-shadow 0.4s;
+      transition: transform 0.4s var(--transition), box-shadow 0.4s;
       display: flex; flex-direction: column;
+      opacity: 1;
     }
-    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
     .product-card.hidden { display: none; }
-    .product-img { height: 160px; overflow: hidden; position: relative; }
-    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+
+    .product-img {
+      height: 200px; overflow: hidden; position: relative;
+    }
+    .product-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s;
+    }
     .product-card:hover .product-img img { transform: scale(1.08); }
+
     .product-tag {
-      position: absolute; top: 10px; left: 10px;
+      position: absolute; top: 12px; left: 12px;
       background: var(--tomato); color: #fff;
-      padding: 0.2rem 0.6rem; border-radius: 50px;
-      font-size: 0.65rem; font-weight: 600;
+      padding: 0.25rem 0.75rem; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.5px;
     }
-    .product-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
-    .product-body h3 { font-size: 1rem; margin-bottom: 0.25rem; }
-    .product-body p { font-size: 0.78rem; opacity: 0.72; margin-bottom: 0.5rem; }
+
+    .product-body { padding: 1.3rem; flex: 1; display: flex; flex-direction: column; }
+    .product-body h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+    .product-body p { font-size: 0.88rem; opacity: 0.75; margin-bottom: 0.6rem; }
     .product-buyer {
-      font-size: 0.72rem; color: var(--fresh); font-weight: 500;
-      margin-bottom: 0.6rem; display: flex; align-items: center; gap: 5px;
+      font-size: 0.8rem; color: var(--fresh); font-weight: 500;
+      margin-bottom: 0.8rem; display: flex; align-items: center; gap: 6px;
     }
-    .product-price { font-size: 0.8rem; font-weight: 700; color: var(--tomato); margin-bottom: 0.7rem; }
-    .product-actions { display: flex; gap: 0.4rem; margin-top: auto; }
-    .product-actions .btn-primary { padding: 0.4rem 0.8rem; font-size: 0.72rem; flex: 1; justify-content: center; }
+    .product-price {
+      font-size: 1rem; font-weight: 700; color: var(--tomato);
+      margin-bottom: 1rem;
+    }
+    .product-actions { display: flex; gap: 0.6rem; margin-top: auto; }
+    .product-actions .btn-primary { padding: 0.5rem 1rem; font-size: 0.8rem; flex: 1; justify-content: center; }
     .product-actions .btn-wa {
-      background: #25D366; color: #fff; padding: 0.4rem 0.8rem;
-      border-radius: 50px; font-size: 0.72rem; font-weight: 600;
-      display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+      background: #25D366; color: #fff; padding: 0.5rem 1rem;
+      border-radius: 50px; font-size: 0.8rem; font-weight: 600;
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
       transition: background 0.3s; flex: 1;
     }
     .product-actions .btn-wa:hover { background: #1da851; }
 
-    /* ========== TEAM ========== */
+    /* ============================================================
+       SMART FARMING
+       ============================================================ */
+    .smart-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.6rem; margin-bottom: 3rem;
+    }
+    .smart-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 1.8rem 1.5rem; box-shadow: var(--shadow-sm);
+      transition: transform 0.4s, box-shadow 0.4s;
+      border-top: 4px solid var(--fresh);
+      transform-style: preserve-3d;
+    }
+    .smart-card:hover {
+      transform: translateY(-6px) rotateX(3deg);
+      box-shadow: var(--shadow-md);
+    }
+    .smart-icon {
+      width: 56px; height: 56px; border-radius: 16px;
+      background: linear-gradient(135deg, var(--fresh), var(--forest));
+      display: grid; place-items: center; color: #fff;
+      font-size: 1.5rem; margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+    .smart-card:hover .smart-icon { transform: rotate(-8deg) scale(1.08); }
+    .smart-card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .smart-card p { font-size: 0.85rem; opacity: 0.72; }
+
+    .process-timeline {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem; counter-reset: step;
+    }
+    .process-step {
+      background: var(--light-gray); border-radius: var(--radius-sm);
+      padding: 1.4rem 1rem; text-align: center; position: relative;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .process-step:hover { transform: translateY(-4px); background: var(--fresh); color: #fff; }
+    .process-step::before {
+      counter-increment: step; content: counter(step);
+      font-family: 'Playfair Display', serif; font-size: 1.8rem;
+      font-weight: 800; color: var(--tomato); display: block; margin-bottom: 0.3rem;
+    }
+    .process-step:hover::before { color: var(--gold); }
+    .process-step h4 { font-size: 0.92rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+
+    /* ============================================================
+       TEAM SECTION
+       ============================================================ */
     .team-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.3rem; max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.8rem;
     }
     .team-card {
       background: var(--white); border-radius: var(--radius);
       overflow: hidden; box-shadow: var(--shadow-sm);
       text-align: center; transition: transform 0.4s, box-shadow 0.4s;
     }
-    .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
     .team-photo {
-      height: 220px; background: linear-gradient(135deg, var(--forest), var(--fresh));
-      display: grid; place-items: center; color: #fff; font-size: 2.8rem;
-      overflow: hidden;
+      height: 280px; background: linear-gradient(135deg, var(--forest), var(--fresh));
+      display: grid; place-items: center; color: #fff; font-size: 3.5rem;
+      position: relative; overflow: hidden;
     }
     .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    .team-info { padding: 1rem; }
-    .team-info h3 { font-size: 1rem; margin-bottom: 0.15rem; }
-    .team-role { font-size: 0.72rem; color: var(--tomato); font-weight: 600; margin-bottom: 0.4rem; }
-    .team-bio { font-size: 0.75rem; opacity: 0.72; }
+    .team-info { padding: 1.4rem; }
+    .team-info h3 { font-size: 1.15rem; margin-bottom: 0.2rem; }
+    .team-role { font-size: 0.82rem; color: var(--tomato); font-weight: 600; margin-bottom: 0.6rem; }
+    .team-bio { font-size: 0.85rem; opacity: 0.72; }
 
-    /* ========== CONTACT ========== */
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 1.8rem; max-width: 950px; margin: 0 auto;
+    /* ============================================================
+       PARTNERS
+       ============================================================ */
+    .partners-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.4rem; margin-bottom: 2.5rem;
     }
-    .contact-info h3 { font-size: 1.3rem; margin-bottom: 1rem; }
-    .contact-item { display: flex; gap: 0.8rem; margin-bottom: 1rem; align-items: flex-start; }
-    .ci-icon {
-      width: 38px; height: 38px; border-radius: 10px;
+    .partner-cat {
+      background: var(--light-gray); border-radius: var(--radius-sm);
+      padding: 1.6rem 1.2rem; text-align: center;
+      border: 2px dashed rgba(63,143,69,0.25);
+      transition: all 0.3s;
+    }
+    .partner-cat:hover {
+      border-color: var(--fresh); background: var(--white);
+      transform: translateY(-4px); box-shadow: var(--shadow-sm);
+    }
+    .partner-cat i { font-size: 1.8rem; color: var(--fresh); margin-bottom: 0.6rem; }
+    .partner-cat h4 { font-size: 0.95rem; font-weight: 600; }
+
+    /* ============================================================
+       GALLERY
+       ============================================================ */
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-item {
+      position: relative; border-radius: var(--radius-sm);
+      overflow: hidden; cursor: pointer; aspect-ratio: 4/3;
+      box-shadow: var(--shadow-sm);
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.1); }
+    .gallery-item::after {
+      content: '\f00e'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; inset: 0; display: grid; place-items: center;
+      background: rgba(18,61,42,0.5); color: #fff; font-size: 1.5rem;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.92);
+      z-index: 10000; display: none; align-items: center; justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90%; max-height: 85vh; border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      animation: zoomIn 0.3s;
+    }
+    @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 30px;
+      color: #fff; font-size: 2rem; background: none;
+      transition: transform 0.2s;
+    }
+    .lightbox-close:hover { transform: rotate(90deg); }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      color: #fff; font-size: 2.2rem; padding: 1rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .lightbox-nav:hover { transform: translateY(-50%) scale(1.15); color: var(--gold); }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    .lightbox-caption {
+      position: absolute; bottom: 24px; left: 0; right: 0;
+      text-align: center; color: rgba(255,255,255,0.85); font-size: 0.9rem;
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+       ============================================================ */
+    .testimonial-box {
+      background: var(--light-gray); border-radius: var(--radius);
+      padding: 3rem 2rem; text-align: center;
+      border: 2px dashed rgba(63,143,69,0.2);
+      max-width: 900px; margin: 0 auto;
+    }
+    .testimonial-box i.big-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem; }
+    .testimonial-box p { font-size: 1rem; font-style: italic; opacity: 0.8; max-width: 700px; margin: 0 auto 1rem; }
+    .testimonial-sub { font-weight: 600; color: var(--forest); margin-top: 1rem; font-size: 1.1rem; }
+    [data-theme="dark"] .testimonial-sub { color: var(--fresh); }
+
+    /* ============================================================
+       CONTACT
+       ============================================================ */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; }
+    .contact-info h3 { font-size: 1.5rem; margin-bottom: 1.2rem; }
+    .contact-item {
+      display: flex; gap: 1rem; margin-bottom: 1.4rem;
+      align-items: flex-start;
+    }
+    .contact-item .ci-icon {
+      width: 48px; height: 48px; border-radius: 12px;
       background: var(--fresh); color: #fff;
-      display: grid; place-items: center; font-size: 0.95rem; flex-shrink: 0;
+      display: grid; place-items: center; font-size: 1.1rem; flex-shrink: 0;
     }
-    .contact-item h4 {
-      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1px;
-      opacity: 0.6; margin-bottom: 0.1rem;
-    }
-    .contact-item p, .contact-item a { font-size: 0.88rem; font-weight: 500; }
+    .contact-item h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6; margin-bottom: 0.2rem; }
+    .contact-item p, .contact-item a { font-size: 1rem; font-weight: 500; }
     .contact-item a:hover { color: var(--tomato); }
 
     .contact-form {
       background: var(--white); border-radius: var(--radius);
-      padding: 1.5rem; box-shadow: var(--shadow-md);
+      padding: 2rem; box-shadow: var(--shadow-md);
     }
-    .form-group { margin-bottom: 0.9rem; }
+    .form-group { margin-bottom: 1.1rem; }
     .form-group label {
-      display: block; font-size: 0.75rem; font-weight: 600;
-      margin-bottom: 0.3rem; opacity: 0.8;
+      display: block; font-size: 0.85rem; font-weight: 600;
+      margin-bottom: 0.4rem; opacity: 0.8;
     }
     .form-group input, .form-group select, .form-group textarea {
-      width: 100%; padding: 0.65rem 0.8rem;
+      width: 100%; padding: 0.75rem 1rem;
       border: 1.5px solid rgba(18,61,42,0.15); border-radius: 10px;
-      font-family: inherit; font-size: 0.85rem;
+      font-family: inherit; font-size: 0.92rem;
       background: var(--cream); color: var(--dark);
       transition: border-color 0.3s, box-shadow 0.3s;
     }
@@ -476,101 +787,139 @@
       outline: none; border-color: var(--fresh);
       box-shadow: 0 0 0 3px rgba(63,143,69,0.12);
     }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
-    .form-error { color: var(--tomato); font-size: 0.72rem; margin-top: 0.2rem; display: none; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-error { color: var(--tomato); font-size: 0.8rem; margin-top: 0.3rem; display: none; }
     .form-error.show { display: block; }
     .form-success {
       background: rgba(63,143,69,0.12); color: var(--fresh);
-      padding: 0.7rem; border-radius: 10px; font-size: 0.8rem;
-      margin-top: 0.7rem; display: none;
+      padding: 0.9rem; border-radius: 10px; font-size: 0.9rem;
+      margin-top: 1rem; display: none;
     }
     .form-success.show { display: block; }
 
-    /* ========== NEWSLETTER ========== */
+    /* ============================================================
+       NEWSLETTER
+       ============================================================ */
     .newsletter {
       background: linear-gradient(135deg, var(--forest), #1a4f33);
       color: #fff; border-radius: var(--radius);
-      padding: 2.2rem 1.8rem; text-align: center;
-      margin: 0 6% 2.5rem; box-shadow: var(--shadow-lg);
+      padding: 3rem 2rem; text-align: center;
+      margin: 0 7% 4rem; box-shadow: var(--shadow-lg);
       position: relative; overflow: hidden;
     }
     .newsletter::before {
-      content: '🍅'; position: absolute; font-size: 10rem;
-      opacity: 0.06; top: -30px; right: -10px; transform: rotate(15deg);
+      content: '??'; position: absolute; font-size: 12rem;
+      opacity: 0.06; top: -40px; right: -20px; transform: rotate(15deg);
     }
-    .newsletter h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .newsletter p { opacity: 0.8; margin-bottom: 1.2rem; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 0.9rem; }
+    .newsletter h3 { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .newsletter p { opacity: 0.8; margin-bottom: 1.6rem; max-width: 500px; margin-left: auto; margin-right: auto; }
     .newsletter-form {
-      display: flex; gap: 0.5rem; max-width: 460px; margin: 0 auto; flex-wrap: wrap;
+      display: flex; gap: 0.6rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap;
       justify-content: center;
     }
     .newsletter-form input {
-      flex: 1; min-width: 180px; padding: 0.75rem 1rem;
-      border-radius: 50px; border: none; font-family: inherit; font-size: 0.88rem;
+      flex: 1; min-width: 200px; padding: 0.85rem 1.2rem;
+      border-radius: 50px; border: none; font-family: inherit; font-size: 0.92rem;
       background: rgba(255,255,255,0.15); color: #fff;
       backdrop-filter: blur(8px);
     }
     .newsletter-form input::placeholder { color: rgba(255,255,255,0.6); }
     .newsletter-form input:focus { outline: 2px solid var(--gold); }
-    .newsletter-form button { border-radius: 50px; padding: 0.75rem 1.5rem; }
+    .newsletter-form button { border-radius: 50px; padding: 0.85rem 1.8rem; }
 
-    /* ========== FAQ ========== */
-    .faq-list { max-width: 750px; margin: 0 auto; }
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
+    .faq-list { max-width: 800px; margin: 0 auto; }
     .faq-item {
       background: var(--white); border-radius: var(--radius-sm);
-      margin-bottom: 0.6rem; overflow: hidden;
+      margin-bottom: 0.8rem; overflow: hidden;
       box-shadow: var(--shadow-sm);
       border: 1px solid rgba(18,61,42,0.06);
     }
     .faq-question {
-      width: 100%; text-align: left; padding: 1rem 1.2rem;
+      width: 100%; text-align: left; padding: 1.2rem 1.4rem;
       display: flex; justify-content: space-between; align-items: center;
-      font-weight: 600; font-size: 0.9rem; color: var(--dark);
+      font-weight: 600; font-size: 0.98rem; color: var(--dark);
       transition: background 0.3s;
     }
-    [data-theme="dark"] .faq-question { color: var(--dark); }
     .faq-question:hover { background: var(--light-gray); }
     .faq-question i { transition: transform 0.3s; color: var(--tomato); }
     .faq-item.open .faq-question i { transform: rotate(180deg); }
     .faq-answer {
       max-height: 0; overflow: hidden;
       transition: max-height 0.4s ease, padding 0.3s;
-      padding: 0 1.2rem;
+      padding: 0 1.4rem;
     }
     .faq-item.open .faq-answer {
-      max-height: 300px; padding: 0 1.2rem 1rem;
+      max-height: 300px; padding: 0 1.4rem 1.2rem;
     }
-    .faq-answer p { font-size: 0.85rem; opacity: 0.78; }
+    .faq-answer p { font-size: 0.9rem; opacity: 0.78; }
 
-    /* ========== FOOTER ========== */
-    .footer {
-      background: var(--forest); color: #d8e8d0;
-      padding: 2.2rem 6% 1.2rem; margin-top: 2rem;
-      position: relative;
+    /* ============================================================
+       SEA WAVE FOOTER
+       ============================================================ */
+    .sea-footer {
+      position: relative; background: var(--forest);
+      color: #d8e8d0; margin-top: 4rem; padding-top: 140px;
+      overflow: hidden;
     }
-    .footer-grid {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 1.8rem; max-width: 1050px; margin: 0 auto;
+    .wave-container {
+      position: absolute; top: 0; left: 0; width: 100%; height: 140px;
+      overflow: hidden; line-height: 0;
+    }
+    .wave {
+      position: absolute; bottom: 0; left: 0; width: 200%; height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="%233F8F45" fill-opacity="0.6"/></svg>');
+      background-size: 50% 100%; background-repeat: repeat-x;
+      animation: waveMove 7s linear infinite;
+    }
+    .wave:nth-child(2) {
+      animation-duration: 10s; animation-direction: reverse;
+      opacity: 0.5; bottom: 6px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="%23D6A84F" fill-opacity="0.5"/></svg>');
+      background-size: 45% 100%;
+    }
+    .wave:nth-child(3) {
+      animation-duration: 13s; opacity: 0.3; bottom: 12px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="%23E53935" fill-opacity="0.5"/></svg>');
+      background-size: 55% 100%;
+    }
+    @keyframes waveMove { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    .footer-main {
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 2.5rem;
+      padding: 2rem 7% 3rem;
+      background: rgba(18,61,42,0.94);
     }
     .footer-col h4 {
-      color: #fff; font-size: 0.9rem; margin-bottom: 0.8rem;
+      color: #fff; font-size: 1.05rem; margin-bottom: 1.2rem;
       font-family: 'Inter', sans-serif; font-weight: 600;
+      letter-spacing: 0.5px;
     }
-    .footer-col p { font-size: 0.78rem; opacity: 0.72; line-height: 1.6; }
+    .footer-col p { font-size: 0.88rem; opacity: 0.72; line-height: 1.7; }
     .footer-col a {
-      display: block; color: #b8d4ac; font-size: 0.78rem;
-      margin-bottom: 0.4rem; transition: all 0.2s;
+      display: block; color: #b8d4ac; font-size: 0.88rem;
+      margin-bottom: 0.6rem; transition: all 0.2s;
     }
-    .footer-col a:hover { color: var(--gold); transform: translateX(3px); }
+    .footer-col a:hover { color: var(--gold); transform: translateX(4px); }
 
-    .footer-logo { margin-bottom: 0.6rem; }
-    .footer-logo svg { width: 36px; height: 36px; }
+    .footer-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Playfair Display', serif; font-weight: 800;
+      font-size: 1.3rem; color: #fff; margin-bottom: 1rem;
+    }
+    .footer-logo .logo-img {
+      width: 50px; height: 50px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--gold);
+    }
 
-    .social-row { display: flex; gap: 0.4rem; margin-top: 0.7rem; flex-wrap: wrap; }
+    .social-row { display: flex; gap: 0.6rem; margin-top: 1rem; flex-wrap: wrap; }
     .social-icon {
-      width: 32px; height: 32px; border-radius: 50%;
+      width: 40px; height: 40px; border-radius: 50%;
       background: rgba(255,255,255,0.1); color: #fff;
-      display: grid; place-items: center; font-size: 0.8rem;
+      display: grid; place-items: center; font-size: 1rem;
       transition: all 0.3s;
     }
     .social-icon:hover { background: var(--gold); color: var(--forest); transform: translateY(-3px); }
@@ -578,91 +927,105 @@
     .social-icon.disabled:hover { background: rgba(255,255,255,0.1); color: #fff; transform: none; }
 
     .footer-bottom {
-      text-align: center; padding-top: 1.2rem; margin-top: 1.2rem;
-      font-size: 0.72rem; color: #8fb080;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      position: relative; z-index: 2;
+      text-align: center; padding: 1.5rem;
+      background: rgba(10, 25, 15, 0.95);
+      font-size: 0.82rem; color: #8fb080;
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
+    .footer-bottom p { margin: 0.2rem 0; }
 
-    /* ========== BACK TO TOP ========== */
+    /* ============================================================
+       TOAST NOTIFICATIONS
+       ============================================================ */
+    .toast-container {
+      position: fixed; bottom: 24px; right: 24px; z-index: 11000;
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .toast {
+      background: var(--forest); color: #fff;
+      padding: 0.9rem 1.4rem; border-radius: 12px;
+      box-shadow: var(--shadow-lg); font-size: 0.9rem;
+      display: flex; align-items: center; gap: 10px;
+      animation: toastIn 0.4s ease; max-width: 340px;
+    }
+    .toast i { color: var(--gold); }
+    @keyframes toastIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    .toast.out { animation: toastOut 0.4s ease forwards; }
+    @keyframes toastOut { to { transform: translateX(120%); opacity: 0; } }
+
+    /* ============================================================
+       BACK TO TOP
+       ============================================================ */
     .back-to-top {
-      position: fixed; bottom: 18px; right: 18px;
-      width: 40px; height: 40px; border-radius: 50%;
+      position: fixed; bottom: 24px; left: 24px;
+      width: 48px; height: 48px; border-radius: 50%;
       background: var(--tomato); color: #fff;
-      display: grid; place-items: center; font-size: 0.95rem;
-      box-shadow: 0 6px 20px rgba(229,57,53,0.4);
+      display: grid; place-items: center; font-size: 1.1rem;
+      box-shadow: 0 8px 24px rgba(229,57,53,0.4);
       z-index: 900; opacity: 0; visibility: hidden;
       transition: all 0.3s;
     }
     .back-to-top.show { opacity: 1; visibility: visible; }
-    .back-to-top:hover { transform: translateY(-3px) scale(1.06); }
+    .back-to-top:hover { transform: translateY(-4px) scale(1.08); }
 
-    /* ========== TOAST ========== */
-    .toast-container {
-      position: fixed; bottom: 20px; left: 20px; z-index: 11000;
-      display: flex; flex-direction: column; gap: 0.5rem;
-    }
-    .toast {
-      background: var(--forest); color: #fff;
-      padding: 0.8rem 1.2rem; border-radius: 12px;
-      box-shadow: var(--shadow-lg); font-size: 0.85rem;
-      display: flex; align-items: center; gap: 10px;
-      animation: toastIn 0.4s ease; max-width: 300px;
-    }
-    .toast i { color: var(--gold); }
-    @keyframes toastIn { from { transform: translateX(-120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-    .toast.out { animation: toastOut 0.4s ease forwards; }
-    @keyframes toastOut { to { transform: translateX(-120%); opacity: 0; } }
-
-    /* ========== MODAL ========== */
+    /* ============================================================
+       MODAL
+       ============================================================ */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.6);
       z-index: 10500; display: none; align-items: center; justify-content: center;
-      padding: 1.2rem; backdrop-filter: blur(4px);
+      padding: 1.5rem; backdrop-filter: blur(4px);
     }
     .modal-overlay.open { display: flex; }
     .modal-box {
       background: var(--white); border-radius: var(--radius);
-      max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto;
-      padding: 1.8rem; position: relative;
+      max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto;
+      padding: 2rem; position: relative;
       animation: modalIn 0.35s ease;
       box-shadow: var(--shadow-lg);
     }
     @keyframes modalIn { from { transform: translateY(30px) scale(0.97); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
     .modal-close {
-      position: absolute; top: 12px; right: 16px;
-      font-size: 1.4rem; color: var(--dark); opacity: 0.5;
+      position: absolute; top: 14px; right: 18px;
+      font-size: 1.5rem; color: var(--dark); opacity: 0.5;
       transition: opacity 0.2s, transform 0.2s;
     }
     .modal-close:hover { opacity: 1; transform: rotate(90deg); }
-    .modal-box h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+    .modal-box h3 { font-size: 1.5rem; margin-bottom: 1.2rem; }
 
-    /* ========== RESPONSIVE ========== */
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
     @media (max-width: 1024px) {
-      .about-container { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero-cards { display: none; }
+      .about-text-content { grid-template-columns: 1fr; gap: 2rem; }
       .contact-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-main { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .nav-actions .btn-primary { display: none; }
-      section { padding: 2.5rem 5%; }
-      .hero { padding: 2rem 5% 5rem; background-attachment: scroll; }
-      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      section { padding: 3.5rem 5%; }
+      .hero { padding: 3rem 5% 7rem; background-attachment: scroll; }
+      .hero-cards { position: static; margin-top: 2.5rem; flex-direction: row; flex-wrap: wrap; }
+      .hero-float-card { min-width: 160px; }
+      .footer-main { grid-template-columns: 1fr; text-align: center; }
       .social-row { justify-content: center; }
       .footer-col a:hover { transform: none; }
-      .about-image img { height: 280px; }
+      .about-image-hero img { height: 350px; }
     }
 
     @media (max-width: 560px) {
-      .slideshow-stage { height: 260px; }
-      .slideshow-carousel { width: 160px; height: 220px; }
-      .slide-card { transform: rotateY(calc(var(--i) * 72deg)) translateZ(190px); }
+      .slideshow-stage { height: 300px; }
+      .slideshow-carousel { width: 200px; height: 260px; }
+      .slide-card { transform: rotateY(calc(var(--i) * 72deg)) translateZ(230px); }
       .form-row { grid-template-columns: 1fr; }
-      .newsletter { margin: 0 4% 2rem; padding: 1.8rem 1.2rem; }
-      .newsletter-form { flex-direction: column; }
-      .newsletter-form input { min-width: 100%; }
+      .hero-float-card { min-width: 140px; padding: 0.7rem 0.9rem; }
+      .hero-float-card .fc-value { font-size: 0.85rem; }
+      .newsletter { margin: 0 5% 3rem; padding: 2rem 1.2rem; }
     }
 
     /* Reduced motion */
@@ -683,7 +1046,7 @@
     }
   </style>
 
-  <!-- Structured data for search engines -->
+  <!-- Structured data for search engines; search display is not guaranteed. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -703,22 +1066,30 @@
     "email": "igirimbabazieric74@gmail.com"
   }
   </script>
+
 </head>
 <body>
 
   <!-- SCROLL PROGRESS -->
   <div id="scroll-progress"></div>
 
-  <!-- ========== NAVBAR ========== -->
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
   <nav class="navbar" id="navbar">
-    <a href="#home" class="nav-logo">
+    <a href="#home" class="nav-logo custom-tomato-logo">
+      <!-- Premium Custom Tomato Logo SVG -->
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Tomato Body -->
         <circle cx="50" cy="55" r="35" fill="#E53935" />
         <circle cx="40" cy="45" r="10" fill="#ff8a80" opacity="0.6" />
+        <!-- Stem -->
         <path d="M50 20 Q45 5 40 15 Q50 20 50 20 Z" fill="#2e5c1e" />
+        <!-- Leaves -->
         <path d="M50 20 Q35 10 25 20 Q40 25 50 20 Z" fill="#3F8F45" />
         <path d="M50 20 Q65 10 75 20 Q60 25 50 20 Z" fill="#3F8F45" />
         <path d="M50 20 Q45 5 50 5 Q55 5 50 20 Z" fill="#3F8F45" />
+        <!-- Highlight -->
         <ellipse cx="35" cy="40" rx="8" ry="5" fill="#ffffff" opacity="0.3" transform="rotate(-30 35 40)" />
       </svg>
     </a>
@@ -727,6 +1098,7 @@
       <a href="#home" class="active">Home</a>
       <a href="#about">About Us</a>
       <a href="#products">Our Tomatoes</a>
+      <a href="#smart-farming">Smart Farming</a>
       <a href="#team">Our Team</a>
       <a href="#partners">Partners</a>
       <a href="#gallery">Gallery</a>
@@ -734,10 +1106,13 @@
     </div>
 
     <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">RW</button>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
-      <a href="#order" class="btn-primary" id="orderNavBtn"><i class="fas fa-shopping-basket"></i> Order</a>
+      <a href="#order" class="btn-primary" id="orderNavBtn">
+        <i class="fas fa-shopping-basket"></i> Order Tomatoes
+      </a>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -749,6 +1124,7 @@
     <a href="#home">Home</a>
     <a href="#about">About Us</a>
     <a href="#products">Our Tomatoes</a>
+    <a href="#smart-farming">Smart Farming</a>
     <a href="#team">Our Team</a>
     <a href="#partners">Partners</a>
     <a href="#gallery">Gallery</a>
@@ -756,10 +1132,14 @@
     <a href="#order" style="color:var(--tomato); font-weight:700;">Order Tomatoes</a>
   </div>
 
-  <!-- ========== HERO ========== -->
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
   <section class="hero" id="home">
     <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-leaf"></i> Kigali, Rwanda</div>
+      <div class="hero-badge">
+        <i class="fas fa-leaf"></i> Kigali, Rwanda
+      </div>
       <h1>Fresh Tomatoes.<br>Healthy Future.</h1>
       <div class="hero-typewriter">
         <span id="typewriter"></span><span class="cursor"></span>
@@ -769,16 +1149,87 @@
         customer relationships, and smart agriculture in Kigali, Rwanda.
       </p>
       <div class="hero-buttons">
-        <a href="#order" class="btn-primary"><i class="fas fa-shopping-basket"></i> Order Fresh Tomatoes</a>
-        <a href="#about" class="btn-outline">Discover Our Farm <i class="fas fa-arrow-right"></i></a>
+        <a href="#order" class="btn-primary">
+          <i class="fas fa-shopping-basket"></i> Order Fresh Tomatoes
+        </a>
+        <a href="#about" class="btn-outline">
+          Discover Our Farm <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
       <div class="hero-location">
         <i class="fas fa-map-marker-alt"></i> Gasabo, Rutunga, Rukerereza · CEO: IGIRIMBABAZI ERIC
       </div>
     </div>
+
+    <div class="hero-cards">
+      <div class="hero-float-card">
+        <i class="fas fa-seedling"></i>
+        <div>
+          <div class="fc-label">Focus</div>
+          <div class="fc-value">Tomato Farming</div>
+        </div>
+      </div>
+      <div class="hero-float-card">
+        <i class="fas fa-handshake"></i>
+        <div>
+          <div class="fc-label">Approach</div>
+          <div class="fc-value">Customer-First</div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ========== ABOUT ========== -->
+  <!-- ============================================================
+       AUTO 3D SLIDESHOW
+       ============================================================ -->
+  <section id="slideshow" style="padding-top: 2rem;">
+    <div class="section-header reveal">
+      <span class="section-tag">Tomato Showcase</span>
+      <h2 class="section-title">A Glimpse of Our Tomatoes</h2>
+      <p class="section-desc">Rotating 3D showcase — hover to pause, use arrows to explore.</p>
+    </div>
+
+    <div class="slideshow-wrap">
+      <div class="slideshow-stage">
+        <div class="slideshow-carousel" id="slideshowCarousel">
+          <!-- Slide 1: Harvesting -->
+          <div class="slide-card" style="--i:0;">
+            <img src="assets/harvesting.png" alt="CEO IGIRIMBABAZI ERIC harvesting fresh tomatoes" loading="lazy">
+            <div class="slide-overlay"><h3>Harvest Freshness</h3><p>Direct from our farm</p></div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide-card" style="--i:1;">
+            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=800&auto=format&fit=crop" alt="Vine-ripened red tomatoes" loading="lazy">
+            <div class="slide-overlay"><h3>Sun-Kissed</h3><p>Vine ripened, deep red</p></div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide-card" style="--i:2;">
+            <img src="https://images.unsplash.com/photo-1561136594-7f68413baa99?q=80&w=800&auto=format&fit=crop" alt="Juicy tomato close-up" loading="lazy">
+            <div class="slide-overlay"><h3>Juicy Gem</h3><p>Bursting with flavor</p></div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="slide-card" style="--i:3;">
+            <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=800&auto=format&fit=crop" alt="Heirloom tomato" loading="lazy">
+            <div class="slide-overlay"><h3>Heirloom</h3><p>Rustic & rich</p></div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="slide-card" style="--i:4;">
+            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=800&auto=format&fit=crop" alt="Tomato on vine" loading="lazy">
+            <div class="slide-overlay"><h3>Vine Fresh</h3><p>Straight from the garden</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="slideshow-controls">
+        <button id="slidePrev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+        <button id="slideNext" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="auto-indicator"><i class="fas fa-sync-alt"></i> auto-rotates</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT (Updated with new layout and image)
+       ============================================================ -->
   <section id="about">
     <div class="section-header reveal">
       <span class="section-tag">About Us</span>
@@ -787,17 +1238,21 @@
     </div>
 
     <div class="about-container reveal">
-      <div class="about-image">
-        <img src="assets/harvesting.png" alt="CEO IGIRIMBABAZI ERIC harvesting tomatoes">
+      <!-- Large Hero Image -->
+      <div class="about-image-hero">
+        <img src="assets/harvesting.png" alt="CEO IGIRIMBABAZI ERIC harvesting tomatoes in the field" loading="lazy">
       </div>
-      <div class="about-text">
-        <h3>I.E. Tomagrove</h3>
-        <p>
-          Based in Kigali, Gasabo, Rutunga, Rukerereza, I.E. Tomagrove is a growing tomato farming business
-          specializing exclusively in tomato production and fresh tomato supply. Led by CEO IGIRIMBABAZI ERIC,
-          we are committed to quality, reliability, and building lasting relationships with our customers.
-        </p>
-        <div class="mv-grid">
+
+      <!-- Text Content Grid -->
+      <div class="about-text-content">
+        <div class="about-main-text">
+          <h3>I.E. Tomagrove</h3>
+          <p>
+            Based in Kigali, Gasabo, Rutunga, Rukerereza, I.E. Tomagrove is a growing tomato farming business specializing exclusively in tomato production and fresh tomato supply. Led by CEO IGIRIMBABAZI ERIC, we are committed to quality, reliability, and building lasting relationships with our customers.
+          </p>
+        </div>
+        
+        <div class="mission-vision">
           <div class="mv-card">
             <h4><i class="fas fa-bullseye"></i> Our Mission</h4>
             <p>To grow and supply quality tomatoes while building a reliable, responsible, and sustainable tomato farming business.</p>
@@ -811,47 +1266,9 @@
     </div>
   </section>
 
-  <!-- ========== SLIDESHOW ========== -->
-  <section id="slideshow" style="background: var(--light-gray);">
-    <div class="section-header reveal">
-      <span class="section-tag">Tomato Showcase</span>
-      <h2 class="section-title">A Glimpse of Our Tomatoes</h2>
-      <p class="section-desc">Hover to pause, use arrows to explore.</p>
-    </div>
-    <div class="slideshow-wrap reveal">
-      <div class="slideshow-stage">
-        <div class="slideshow-carousel" id="slideshowCarousel">
-          <div class="slide-card" style="--i:0;">
-            <img src="assets/harvesting.png" alt="Harvesting fresh tomatoes">
-            <div class="slide-overlay"><h3>Harvest Freshness</h3><p>Direct from our farm</p></div>
-          </div>
-          <div class="slide-card" style="--i:1;">
-            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=600&auto=format&fit=crop" alt="Vine-ripened red tomatoes">
-            <div class="slide-overlay"><h3>Sun-Kissed</h3><p>Vine ripened, deep red</p></div>
-          </div>
-          <div class="slide-card" style="--i:2;">
-            <img src="https://images.unsplash.com/photo-1561136594-7f68413baa99?q=80&w=600&auto=format&fit=crop" alt="Juicy tomato close-up">
-            <div class="slide-overlay"><h3>Juicy Gem</h3><p>Bursting with flavor</p></div>
-          </div>
-          <div class="slide-card" style="--i:3;">
-            <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=600&auto=format&fit=crop" alt="Heirloom tomato">
-            <div class="slide-overlay"><h3>Heirloom</h3><p>Rustic & rich</p></div>
-          </div>
-          <div class="slide-card" style="--i:4;">
-            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=600&auto=format&fit=crop" alt="Tomato on vine">
-            <div class="slide-overlay"><h3>Vine Fresh</h3><p>Straight from the garden</p></div>
-          </div>
-        </div>
-      </div>
-      <div class="slideshow-controls">
-        <button id="slidePrev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-        <button id="slideNext" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
-      </div>
-      <div class="auto-indicator"><i class="fas fa-sync-alt"></i> auto-rotates</div>
-    </div>
-  </section>
-
-  <!-- ========== PRODUCTS ========== -->
+  <!-- ============================================================
+       PRODUCTS
+       ============================================================ -->
   <section id="products">
     <div class="section-header reveal">
       <span class="section-tag">Our Tomatoes</span>
@@ -867,9 +1284,10 @@
     </div>
 
     <div class="products-grid" id="productsGrid">
+      <!-- Product 1 -->
       <div class="product-card reveal" data-category="retail restaurants">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=600&auto=format&fit=crop" alt="Fresh tomatoes">
+          <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=600&auto=format&fit=crop" alt="Fresh tomatoes" loading="lazy">
           <span class="product-tag">Popular</span>
         </div>
         <div class="product-body">
@@ -884,9 +1302,10 @@
         </div>
       </div>
 
+      <!-- Product 2 -->
       <div class="product-card reveal" data-category="retail">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1561136594-7f68413baa99?q=80&w=600&auto=format&fit=crop" alt="Ripe red tomatoes">
+          <img src="https://images.unsplash.com/photo-1561136594-7f68413baa99?q=80&w=600&auto=format&fit=crop" alt="Ripe red tomatoes" loading="lazy">
         </div>
         <div class="product-body">
           <h3>Ripe Red Tomatoes</h3>
@@ -900,9 +1319,10 @@
         </div>
       </div>
 
+      <!-- Product 3 -->
       <div class="product-card reveal" data-category="retail wholesale">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=600&auto=format&fit=crop" alt="Firm tomatoes for transport">
+          <img src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=600&auto=format&fit=crop" alt="Firm tomatoes for transport" loading="lazy">
         </div>
         <div class="product-body">
           <h3>Firm Tomatoes for Retail & Transport</h3>
@@ -916,9 +1336,10 @@
         </div>
       </div>
 
+      <!-- Product 4 -->
       <div class="product-card reveal" data-category="restaurants wholesale">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=600&auto=format&fit=crop" alt="Tomatoes for restaurants">
+          <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=600&auto=format&fit=crop" alt="Tomatoes for restaurants" loading="lazy">
         </div>
         <div class="product-body">
           <h3>Tomatoes for Restaurants</h3>
@@ -932,9 +1353,10 @@
         </div>
       </div>
 
+      <!-- Product 5 -->
       <div class="product-card reveal" data-category="wholesale">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1561136594-7f68413baa99?q=80&w=600&auto=format&fit=crop" alt="Bulk tomato supply">
+          <img src="https://images.unsplash.com/photo-1561136594-7f68413baa99?q=80&w=600&auto=format&fit=crop" alt="Bulk tomato supply" loading="lazy">
           <span class="product-tag">Bulk</span>
         </div>
         <div class="product-body">
@@ -951,7 +1373,9 @@
     </div>
   </section>
 
-  <!-- ========== ORDER SECTION ========== -->
+  <!-- ============================================================
+       ORDER SECTION
+       ============================================================ -->
   <section id="order" style="background: var(--light-gray);">
     <div class="section-header reveal">
       <span class="section-tag">Ordering</span>
@@ -959,7 +1383,7 @@
       <p class="section-desc">Fill in your order request. We'll generate a summary you can send via WhatsApp or email.</p>
     </div>
 
-    <div style="max-width: 680px; margin: 0 auto;" class="reveal">
+    <div style="max-width: 720px; margin: 0 auto;" class="reveal">
       <form class="contact-form" id="orderForm" novalidate>
         <div class="form-row">
           <div class="form-group">
@@ -1023,22 +1447,24 @@
         </div>
         <div class="form-group">
           <label for="orderNotes">Additional Notes</label>
-          <textarea id="orderNotes" rows="2" placeholder="Any special requirements..."></textarea>
+          <textarea id="orderNotes" rows="3" placeholder="Any special requirements..."></textarea>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.65rem;">
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
             <i class="fas fa-check"></i> Generate Order Request
           </button>
         </div>
         <div class="form-success" id="orderSuccess"></div>
-        <p style="font-size:0.72rem; opacity:0.55; margin-top:0.6rem;">
+        <p style="font-size:0.78rem; opacity:0.55; margin-top:0.8rem;">
           This is a front-end demonstration. Your order is not saved to a server — you must send the generated message via WhatsApp or email.
         </p>
       </form>
     </div>
   </section>
 
-  <!-- ========== SMART FARMING ========== -->
+  <!-- ============================================================
+       SMART FARMING
+       ============================================================ -->
   <section id="smart-farming">
     <div class="section-header reveal">
       <span class="section-tag">Smart Farming</span>
@@ -1089,7 +1515,7 @@
       </div>
     </div>
 
-    <h3 style="text-align:center; font-size:1.2rem; margin-bottom:1.2rem; color:var(--forest);" class="reveal">Our Process</h3>
+    <h3 style="text-align:center; font-size:1.4rem; margin-bottom:1.5rem; color:var(--forest);" class="reveal">Our Process</h3>
     <div class="process-timeline reveal">
       <div class="process-step"><h4>Soil & Farm Preparation</h4></div>
       <div class="process-step"><h4>Seed Selection & Nursery</h4></div>
@@ -1100,7 +1526,9 @@
     </div>
   </section>
 
-  <!-- ========== TEAM ========== -->
+  <!-- ============================================================
+       TEAM
+       ============================================================ -->
   <section id="team" style="background: var(--light-gray);">
     <div class="section-header reveal">
       <span class="section-tag">Our Team</span>
@@ -1109,6 +1537,7 @@
     </div>
 
     <div class="team-grid reveal">
+      <!-- CEO: IGIRIMBABAZI ERIC (With Profile Picture) -->
       <div class="team-card">
         <div class="team-photo">
           <img src="assets/eric-profile.png" alt="IGIRIMBABAZI ERIC, CEO and founder of I.E. Tomagrove" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23123D2A%22/><circle cx=%2250%22 cy=%2235%22 r=%2220%22 fill=%22%23fff%22/><path d=%22M20 90 Q50 60 80 90%22 stroke=%22%23fff%22 stroke-width=%2210%22 fill=%22none%22/></svg>'">
@@ -1119,7 +1548,8 @@
           <p class="team-bio">Business coordination, customer relationships, digital development, and business growth.</p>
         </div>
       </div>
-
+      
+      <!-- NIYONSHUTI JEANBOSCO (Profile Coming Soon) -->
       <div class="team-card">
         <div class="team-photo" style="background: linear-gradient(135deg, var(--fresh), var(--forest));">
           <i class="fas fa-chart-line"></i>
@@ -1131,6 +1561,7 @@
         </div>
       </div>
 
+      <!-- MUNEZERO GAD (Profile Coming Soon) -->
       <div class="team-card">
         <div class="team-photo" style="background: linear-gradient(135deg, var(--gold), var(--tomato));">
           <i class="fas fa-store"></i>
@@ -1144,7 +1575,9 @@
     </div>
   </section>
 
-  <!-- ========== PARTNERS ========== -->
+  <!-- ============================================================
+       PARTNERS
+       ============================================================ -->
   <section id="partners">
     <div class="section-header reveal">
       <span class="section-tag">Partners</span>
@@ -1167,7 +1600,9 @@
     </div>
   </section>
 
-  <!-- ========== GALLERY ========== -->
+  <!-- ============================================================
+       GALLERY
+       ============================================================ -->
   <section id="gallery" style="background: var(--light-gray);">
     <div class="section-header reveal">
       <span class="section-tag">Gallery</span>
@@ -1176,6 +1611,7 @@
     </div>
 
     <div class="gallery-grid reveal" id="galleryGrid">
+      <!-- Added Harvesting Image to Gallery -->
       <div class="gallery-item" data-caption="CEO IGIRIMBABAZI ERIC harvesting tomatoes">
         <img src="assets/harvesting.png" alt="CEO IGIRIMBABAZI ERIC harvesting tomatoes" loading="lazy">
       </div>
@@ -1197,7 +1633,9 @@
     </div>
   </section>
 
-  <!-- ========== TESTIMONIALS / CUSTOMER EXPECTATIONS ========== -->
+  <!-- ============================================================
+       TESTIMONIALS / CUSTOMER EXPECTATIONS
+       ============================================================ -->
   <section id="testimonials">
     <div class="section-header reveal">
       <span class="section-tag">Testimonials</span>
@@ -1218,7 +1656,9 @@
     </div>
   </section>
 
-  <!-- ========== CONTACT ========== -->
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
   <section id="contact" style="background: var(--light-gray);">
     <div class="section-header reveal">
       <span class="section-tag">Contact</span>
@@ -1229,30 +1669,76 @@
     <div class="contact-grid reveal">
       <div class="contact-info">
         <h3>Contact Information</h3>
-        <div class="contact-item"><div class="ci-icon"><i class="fas fa-building"></i></div><div><h4>Company</h4><p>I.E. Tomagrove</p></div></div>
-        <div class="contact-item"><div class="ci-icon"><i class="fas fa-user"></i></div><div><h4>CEO / Representative</h4><p>IGIRIMBABAZI ERIC</p></div></div>
-        <div class="contact-item"><div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Location</h4><p>Kigali, Gasabo, Rutunga, Rukerereza</p></div></div>
-        <div class="contact-item"><div class="ci-icon"><i class="fas fa-phone"></i></div><div><h4>Phone</h4><a href="tel:+250785700308">+250 785 700 308</a></div></div>
-        <div class="contact-item"><div class="ci-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><a href="mailto:igirimbabazieric74@gmail.com">igirimbabazieric74@gmail.com</a></div></div>
-        <div class="contact-item"><div class="ci-icon"><i class="fas fa-clock"></i></div><div><h4>Business Hours</h4><p id="businessHours">Mon–Sat: 8:00 AM – 6:00 PM</p></div></div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fas fa-building"></i></div>
+          <div><h4>Company</h4><p>I.E. Tomagrove</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fas fa-user"></i></div>
+          <div><h4>CEO / Representative</h4><p>IGIRIMBABAZI ERIC</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><h4>Location</h4><p>Kigali, Gasabo, Rutunga, Rukerereza</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fas fa-phone"></i></div>
+          <div><h4>Phone</h4><a href="tel:+250785700308">+250 785 700 308</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+          <div><h4>Email</h4><a href="mailto:igirimbabazieric74@gmail.com">igirimbabazieric74@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fas fa-clock"></i></div>
+          <div><h4>Business Hours</h4><p id="businessHours">Mon–Sat: 8:00 AM – 6:00 PM</p></div>
+        </div>
       </div>
 
       <form class="contact-form" id="contactForm" novalidate>
         <div class="form-row">
-          <div class="form-group"><label for="contactName">Full Name *</label><input type="text" id="contactName" required placeholder="Your name"><div class="form-error" id="contactNameError">Please enter your name.</div></div>
-          <div class="form-group"><label for="contactPhone">Phone *</label><input type="tel" id="contactPhone" required placeholder="+250 ..."><div class="form-error" id="contactPhoneError">Please enter your phone.</div></div>
+          <div class="form-group">
+            <label for="contactName">Full Name *</label>
+            <input type="text" id="contactName" required placeholder="Your name">
+            <div class="form-error" id="contactNameError">Please enter your name.</div>
+          </div>
+          <div class="form-group">
+            <label for="contactPhone">Phone *</label>
+            <input type="tel" id="contactPhone" required placeholder="+250 ...">
+            <div class="form-error" id="contactPhoneError">Please enter your phone.</div>
+          </div>
         </div>
-        <div class="form-group"><label for="contactEmail">Email *</label><input type="email" id="contactEmail" required placeholder="you@email.com"><div class="form-error" id="contactEmailError">Please enter a valid email.</div></div>
-        <div class="form-group"><label for="contactSubject">Subject *</label><input type="text" id="contactSubject" required placeholder="What is this about?"><div class="form-error" id="contactSubjectError">Please enter a subject.</div></div>
-        <div class="form-group"><label for="contactMessage">Message *</label><textarea id="contactMessage" rows="3" required placeholder="Your message..."></textarea><div class="form-error" id="contactMessageError">Please enter a message.</div></div>
-        <div class="form-group"><button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.65rem;"><i class="fas fa-paper-plane"></i> Send Message</button></div>
+        <div class="form-group">
+          <label for="contactEmail">Email *</label>
+          <input type="email" id="contactEmail" required placeholder="you@email.com">
+          <div class="form-error" id="contactEmailError">Please enter a valid email.</div>
+        </div>
+        <div class="form-group">
+          <label for="contactSubject">Subject *</label>
+          <input type="text" id="contactSubject" required placeholder="What is this about?">
+          <div class="form-error" id="contactSubjectError">Please enter a subject.</div>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message *</label>
+          <textarea id="contactMessage" rows="4" required placeholder="Your message..."></textarea>
+          <div class="form-error" id="contactMessageError">Please enter a message.</div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </div>
         <div class="form-success" id="contactSuccess"></div>
-        <p style="font-size:0.72rem; opacity:0.55; margin-top:0.6rem;">This form generates an email draft. Your message is not stored on a server.</p>
+        <p style="font-size:0.78rem; opacity:0.55; margin-top:0.8rem;">
+          This form generates an email draft. Your message is not stored on a server.
+        </p>
       </form>
     </div>
   </section>
 
-  <!-- ========== NEWSLETTER ========== -->
+  <!-- ============================================================
+       NEWSLETTER
+       ============================================================ -->
   <div class="newsletter reveal">
     <h3>Stay Fresh with Tomagrove</h3>
     <p>Subscribe to receive updates about our tomato farming journey and availability.</p>
@@ -1264,7 +1750,9 @@
     <div class="form-success" id="newsletterSuccess" style="background:rgba(255,255,255,0.15); color:#fff;"></div>
   </div>
 
-  <!-- ========== FAQ ========== -->
+  <!-- ============================================================
+       FAQ
+       ============================================================ -->
   <section id="faq">
     <div class="section-header reveal">
       <span class="section-tag">FAQ</span>
@@ -1302,26 +1790,37 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer" id="footer">
-    <div class="footer-grid">
+  <!-- ============================================================
+       SEA WAVE FOOTER
+       ============================================================ -->
+  <footer class="sea-footer" id="footer">
+    <div class="wave-container">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    <div class="footer-main">
       <div class="footer-col">
         <div class="footer-logo">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Premium Custom Tomato Logo SVG for Footer -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:40px; height:40px;">
             <circle cx="50" cy="55" r="35" fill="#E53935" />
             <circle cx="40" cy="45" r="10" fill="#ff8a80" opacity="0.6" />
+            <path d="M50 20 Q45 5 40 15 Q50 20 50 20 Z" fill="#2e5c1e" />
             <path d="M50 20 Q35 10 25 20 Q40 25 50 20 Z" fill="#3F8F45" />
             <path d="M50 20 Q65 10 75 20 Q60 25 50 20 Z" fill="#3F8F45" />
+            <path d="M50 20 Q45 5 50 5 Q55 5 50 20 Z" fill="#3F8F45" />
+            <ellipse cx="35" cy="40" rx="8" ry="5" fill="#ffffff" opacity="0.3" transform="rotate(-30 35 40)" />
           </svg>
         </div>
         <p>Fresh Tomatoes. Healthy Future. A growing tomato farming business in Kigali, Rwanda, focused on quality and customer relationships.</p>
         <div class="social-row">
-          <a href="#" class="social-icon disabled" title="Facebook (not configured)"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon disabled" title="Instagram (not configured)"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon disabled" title="TikTok (not configured)"><i class="fab fa-tiktok"></i></a>
-          <a href="#" class="social-icon disabled" title="YouTube (not configured)"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="social-icon disabled" title="LinkedIn (not configured)"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://wa.me/250785700308" class="social-icon" title="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-icon disabled" title="Facebook (not configured)" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon disabled" title="Instagram (not configured)" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon disabled" title="TikTok (not configured)" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="social-icon disabled" title="YouTube (not configured)" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-icon disabled" title="LinkedIn (not configured)" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/250785700308" class="social-icon" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -1329,17 +1828,25 @@
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
         <a href="#products">Our Tomatoes</a>
+        <a href="#smart-farming">Smart Farming</a>
         <a href="#team">Our Team</a>
-        <a href="#partners">Partners</a>
         <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="#products">Fresh Tomatoes</a>
+        <a href="#products">Ripe Red Tomatoes</a>
+        <a href="#products">Firm Tomatoes</a>
+        <a href="#products">Restaurant Supply</a>
+        <a href="#products">Bulk Supply</a>
+        <a href="#partners">Become a Partner</a>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <a href="tel:+250785700308"><i class="fas fa-phone"></i> +250 785 700 308</a>
         <a href="mailto:igirimbabazieric74@gmail.com"><i class="fas fa-envelope"></i> igirimbabazieric74@gmail.com</a>
         <a href="#contact"><i class="fas fa-map-marker-alt"></i> Gasabo, Rutunga, Rukerereza</a>
-        <p style="font-size:0.72rem; margin-top:0.8rem; opacity:0.55;">
+        <p style="font-size:0.78rem; margin-top:1rem; opacity:0.55;">
           Front-end forms generate drafts only — no data is stored on a server.
         </p>
       </div>
@@ -1411,22 +1918,24 @@
           <textarea id="partnerMessage" rows="3" required placeholder="Tell us about your partnership idea..."></textarea>
           <div class="form-error" id="partnerMessageError">Please enter a message.</div>
         </div>
-        <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:0.65rem;">
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
           <i class="fas fa-paper-plane"></i> Send Partnership Inquiry
         </button>
         <div class="form-success" id="partnerSuccess"></div>
-        <p style="font-size:0.72rem; opacity:0.55; margin-top:0.6rem;">
+        <p style="font-size:0.78rem; opacity:0.55; margin-top:0.8rem;">
           This generates an email draft. Nothing is stored on a server.
         </p>
       </form>
     </div>
   </div>
 
-  <!-- ========== JAVASCRIPT ========== -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2010609216863568" crossorigin="anonymous"></script>
-
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
   <script>
-    /* ========== CONFIGURATION ========== */
+    /* ============================================================
+       CONFIGURATION — Edit these to customize the website
+       ============================================================ */
     const CONFIG = {
       company: {
         name: "I.E. Tomagrove",
@@ -1446,12 +1955,156 @@
         x: "",
         whatsapp: "250785700308"
       },
-      businessHours: "Mon–Sat: 8:00 AM – 6:00 PM"
+      businessHours: "Mon–Sat: 8:00 AM – 6:00 PM",
+      team: [
+        {
+          name: "IGIRIMBABAZI ERIC",
+          role: "CEO / Founder",
+          bio: "Business coordination, customer relationships, digital development, and business growth.",
+          image: "assets/eric-profile.png"
+        },
+        {
+          name: "NIYONSHUTI JEANBOSCO",
+          role: "Market Researcher",
+          bio: "Profile Coming Soon."
+        },
+        {
+          name: "MUNEZERO GAD",
+          role: "Market Vendor",
+          bio: "Profile Coming Soon."
+        }
+      ],
+      testimonials: [],
+      productPrices: {
+        "Fresh Tomatoes": "",
+        "Ripe Red Tomatoes": "",
+        "Firm Tomatoes for Retail & Transport": "",
+        "Tomatoes for Restaurants": "",
+        "Bulk Tomato Supply": ""
+      }
     };
 
-    /* ========== HELPERS ========== */
-    const $ = (sel, ctx = document) => ctx.querySelector(sel);
-    const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+    /* ============================================================
+       TRANSLATIONS
+       ============================================================ */
+    const TRANSLATIONS = {
+      en: {
+        nav: {
+          home: "Home", about: "About Us", products: "Our Tomatoes",
+          smart: "Smart Farming", team: "Our Team", partners: "Partners",
+          gallery: "Gallery", contact: "Contact"
+        },
+        hero: {
+          badge: "Kigali, Rwanda",
+          title: "Fresh Tomatoes.<br>Healthy Future.",
+          sub: "I.E. Tomagrove is a growing tomato farming business dedicated to quality tomato production, customer relationships, and smart agriculture in Kigali, Rwanda.",
+          orderBtn: "Order Fresh Tomatoes",
+          discoverBtn: "Discover Our Farm",
+          location: "Gasabo, Rutunga, Rukerereza · CEO: IGIRIMBABAZI ERIC",
+          typewriter: [
+            "Growing Quality. Delivering Freshness.",
+            "Tomato-focused farming.",
+            "Customer-first approach.",
+            "Fresh Tomatoes. Healthy Future."
+          ]
+        },
+        sectionTitles: {
+          slideshowTag: "Tomato Showcase",
+          slideshowTitle: "A Glimpse of Our Tomatoes",
+          slideshowDesc: "Rotating 3D showcase — hover to pause, use arrows to explore.",
+          aboutTag: "About Us",
+          aboutTitle: "Growing Quality, Delivering Freshness",
+          aboutDesc: "A tomato-focused farming business with a vision for modern, sustainable agriculture.",
+          productsTag: "Our Tomatoes",
+          productsTitle: "Tomato Products & Supply",
+          productsDesc: "We specialize exclusively in tomatoes. Choose the option that fits your needs.",
+          orderTag: "Ordering",
+          orderTitle: "Request Fresh Tomatoes",
+          orderDesc: "Fill in your order request. We'll generate a summary you can send via WhatsApp or email.",
+          smartTag: "Smart Farming",
+          smartTitle: "Modern Methods, Responsible Agriculture",
+          smartDesc: "Practical technologies and methods we aim to adopt as we grow.",
+          teamTag: "Our Team",
+          teamTitle: "The People Behind Tomagrove",
+          teamDesc: "Meet our founder and the growing team.",
+          partnersTag: "Partners",
+          partnersTitle: "Collaborate With Us",
+          partnersDesc: "We welcome partnerships across the tomato value chain.",
+          galleryTag: "Gallery",
+          galleryTitle: "From Vine to Market",
+          galleryDesc: "Representative images. Actual farm photos will replace these as we grow.",
+          testimonialsTag: "Testimonials",
+          testimonialsTitle: "Customer Stories",
+          contactTag: "Contact",
+          contactTitle: "Get in Touch",
+          contactDesc: "We'd love to hear from you. Reach out for orders, partnerships, or inquiries.",
+          faqTag: "FAQ",
+          faqTitle: "Frequently Asked Questions"
+        }
+      },
+      rw: {
+        nav: {
+          home: "Ahabanza", about: "Ibyerekeye", products: "Inyanya Zacu",
+          smart: "Ubuhinzi Bwubatswe", team: "Itsinda Ryacu", partners: "Abafatanyabikorwa",
+          gallery: "Amafoto", contact: "Twandikire"
+        },
+        hero: {
+          badge: "Kigali, U Rwanda",
+          title: "Inyanya Nziza.<br>Ejo Hazaza Heza.",
+          sub: "I.E. Tomagrove ni sosiyete ihinza inyanya mu Kigali, U Rwanda, yiyemeje gukora inyanya nziza, kubungabunga abakiriya, n'ubuhinzi bugezweho.",
+          orderBtn: "Tumiza Inyanya",
+          discoverBtn: "Menya Umurima Wacu",
+          location: "Gasabo, Rutunga, Rukerereza · CEO: IGIRIMBABAZI ERIC",
+          typewriter: [
+            "Gukura Neza. Gutanga Uburumbuke.",
+            "Ubuhinzi bw'innyanya gusa.",
+            "Abakiriya mbere.",
+            "Inyanya Nziza. Ejo Hazaza Heza."
+          ]
+        },
+        sectionTitles: {
+          slideshowTag: "Inyanya Zacu",
+          slideshowTitle: "Reba Inyanya Zacu",
+          slideshowDesc: "Igaragaza rya 3D — hagarika ugenzura, koresha imyambi.",
+          aboutTag: "Ibyerekeye",
+          aboutTitle: "Gukura Neza, Gutanga Uburumbuke",
+          aboutDesc: "Sosiyete ihinza inyanya gusa ifite intego y'ubuhinzi bugezweho.",
+          productsTag: "Inyanya Zacu",
+          productsTitle: "Ibicuruzwa by'Inyanya",
+          productsDesc: "Twihariye inyanya gusa. Hitamo icyo ukeneye.",
+          orderTag: "Gutumiza",
+          orderTitle: "Saba Inyanya Nziza",
+          orderDesc: "Uzuza ibisabwa. Tuzakugenera ubutumwa bwo kohereza kuri WhatsApp cyangwa email.",
+          smartTag: "Ubuhinzi Bwubatswe",
+          smartTitle: "Uburyo Bugezweho, Ubuhinzi Bwiza",
+          smartDesc: "Ikoranabuhanga n'uburyo dushaka gukoresha uko dukura.",
+          teamTag: "Itsinda Ryacu",
+          teamTitle: "Abantu Bari Inyuma ya Tomagrove",
+          teamDesc: "Menya uwashinze n'itsinda rikura.",
+          partnersTag: "Abafatanyabikorwa",
+          partnersTitle: "Fatanya Natwe",
+          partnersDesc: "Twakira abafatanyabikorwa mu nzira yose y'inyanya.",
+          galleryTag: "Amafoto",
+          galleryTitle: "Kuva Ku Murima Kugera Ku Isoko",
+          galleryDesc: "Amafoto y'urugero. Amafoto y'umurima wacu azasimbuza aya uko dukura.",
+          testimonialsTag: "Ubuhamya",
+          testimonialsTitle: "Inkuru z'Abakiriya",
+          contactTag: "Twandikire",
+          contactTitle: "Tuvugishe",
+          contactDesc: "Twifuza kumva ibyawe. Twandikire ku bijyanye n'ubutumwa, ubufatanye cyangwa ibibazo.",
+          faqTag: "Ibibazo",
+          faqTitle: "Ibibazo Bikunze Kubazwa"
+        }
+      }
+    };
+
+    let currentLang = 'en';
+
+    /* ============================================================
+       HELPER FUNCTIONS
+       ============================================================ */
+    function $(sel, ctx = document) { return ctx.querySelector(sel); }
+    function $$(sel, ctx = document) { return [...ctx.querySelectorAll(sel)]; }
 
     function showToast(message, icon = 'fa-check-circle') {
       const container = $('#toastContainer');
@@ -1479,7 +2132,9 @@
       }
     }
 
-    /* ========== THEME TOGGLE ========== */
+    /* ============================================================
+       THEME TOGGLE
+       ============================================================ */
     const themeToggle = $('#themeToggle');
     const savedTheme = localStorage.getItem('tomagrove-theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
@@ -1494,43 +2149,156 @@
     });
 
     function updateThemeIcon(theme) {
-      themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeToggle.innerHTML = theme === 'dark'
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
     }
 
-    /* ========== TYPEWRITER ========== */
-    const phrases = [
-      "Growing Quality. Delivering Freshness.",
-      "Tomato-focused farming.",
-      "Customer-first approach.",
-      "Fresh Tomatoes. Healthy Future."
-    ];
-    let phraseIndex = 0, charIndex = 0, isDeleting = false;
-    const typewriterEl = $('#typewriter');
+    /* ============================================================
+       LANGUAGE TOGGLE
+       ============================================================ */
+    const langToggle = $('#langToggle');
+
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'rw' : 'en';
+      langToggle.textContent = currentLang === 'en' ? 'RW' : 'EN';
+      applyLanguage();
+    });
+
+    function applyLanguage() {
+      const t = TRANSLATIONS[currentLang];
+      const navLinks = $$('.nav-links a');
+      const navKeys = ['home','about','products','smart','team','partners','gallery','contact'];
+      navKeys.forEach((key, i) => {
+        if (navLinks[i]) navLinks[i].textContent = t.nav[key];
+      });
+      const mobileLinks = $$('.mobile-nav a');
+      navKeys.forEach((key, i) => {
+        if (mobileLinks[i]) mobileLinks[i].textContent = t.nav[key];
+      });
+      $('.hero-badge').innerHTML = `<i class="fas fa-leaf"></i> ${t.hero.badge}`;
+      $('.hero h1').innerHTML = t.hero.title;
+      $('.hero-sub').textContent = t.hero.sub;
+      $('.hero-location').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${t.hero.location}`;
+      const heroBtns = $$('.hero-buttons a');
+      if (heroBtns[0]) heroBtns[0].innerHTML = `<i class="fas fa-shopping-basket"></i> ${t.hero.orderBtn}`;
+      if (heroBtns[1]) heroBtns[1].innerHTML = `${t.hero.discoverBtn} <i class="fas fa-arrow-right"></i>`;
+      
+      const st = t.sectionTitles;
+      const setSectionHeader = (selector, tag, title, desc) => {
+        const header = $(selector);
+        if (!header) return;
+        const tagEl = header.querySelector('.section-tag');
+        const titleEl = header.querySelector('.section-title');
+        const descEl = header.querySelector('.section-desc');
+        if (tagEl) tagEl.textContent = tag;
+        if (titleEl) titleEl.textContent = title;
+        if (descEl && desc) descEl.textContent = desc;
+      };
+      setSectionHeader('#slideshow .section-header', st.slideshowTag, st.slideshowTitle, st.slideshowDesc);
+      setSectionHeader('#about .section-header', st.aboutTag, st.aboutTitle, st.aboutDesc);
+      setSectionHeader('#products .section-header', st.productsTag, st.productsTitle, st.productsDesc);
+      setSectionHeader('#order .section-header', st.orderTag, st.orderTitle, st.orderDesc);
+      setSectionHeader('#smart-farming .section-header', st.smartTag, st.smartTitle, st.smartDesc);
+      setSectionHeader('#team .section-header', st.teamTag, st.teamTitle, st.teamDesc);
+      setSectionHeader('#partners .section-header', st.partnersTag, st.partnersTitle, st.partnersDesc);
+      setSectionHeader('#gallery .section-header', st.galleryTag, st.galleryTitle, st.galleryDesc);
+      setSectionHeader('#testimonials .section-header', st.testimonialsTag, st.testimonialsTitle, '');
+      setSectionHeader('#contact .section-header', st.contactTag, st.contactTitle, st.contactDesc);
+      setSectionHeader('#faq .section-header', st.faqTag, st.faqTitle, '');
+      
+      restartTypewriter();
+    }
+
+    /* ============================================================
+       TYPEWRITER EFFECT
+       ============================================================ */
     let typewriterTimeout = null;
+    let typewriterIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
     function typewriterTick() {
-      const current = phrases[phraseIndex % phrases.length];
+      const t = TRANSLATIONS[currentLang];
+      const phrases = t.hero.typewriter;
+      const el = $('#typewriter');
+      if (!el) return;
+      const currentPhrase = phrases[typewriterIndex % phrases.length];
+
       if (isDeleting) {
-        typewriterEl.textContent = current.substring(0, charIndex - 1);
+        el.textContent = currentPhrase.substring(0, charIndex - 1);
         charIndex--;
       } else {
-        typewriterEl.textContent = current.substring(0, charIndex + 1);
+        el.textContent = currentPhrase.substring(0, charIndex + 1);
         charIndex++;
       }
+
       let delay = isDeleting ? 40 : 75;
-      if (!isDeleting && charIndex === current.length) {
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
         delay = 2000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        phraseIndex++;
+        typewriterIndex++;
         delay = 400;
       }
+
       typewriterTimeout = setTimeout(typewriterTick, delay);
     }
-    typewriterTick();
 
-    /* ========== MOBILE NAV ========== */
+    function restartTypewriter() {
+      if (typewriterTimeout) clearTimeout(typewriterTimeout);
+      typewriterIndex = 0;
+      charIndex = 0;
+      isDeleting = false;
+      const el = $('#typewriter');
+      if (el) el.textContent = '';
+      typewriterTick();
+    }
+
+    /* ============================================================
+       AUTO 3D SLIDESHOW
+       ============================================================ */
+    const carousel = $('#slideshowCarousel');
+    let slideAngle = 0;
+    let slideAutoInterval = null;
+    const slideStep = 72;
+
+    function startSlideAuto() {
+      if (slideAutoInterval) clearInterval(slideAutoInterval);
+      slideAutoInterval = setInterval(() => {
+        slideAngle += 0.4;
+        if (slideAngle >= 360) slideAngle -= 360;
+        carousel.style.transform = `rotateY(${slideAngle}deg)`;
+      }, 30);
+    }
+
+    carousel.style.transform = 'rotateY(0deg)';
+    startSlideAuto();
+
+    const slideshowStage = $('.slideshow-stage');
+    slideshowStage.addEventListener('mouseenter', () => clearInterval(slideAutoInterval));
+    slideshowStage.addEventListener('mouseleave', startSlideAuto);
+
+    $('#slidePrev').addEventListener('click', () => {
+      clearInterval(slideAutoInterval);
+      slideAngle -= slideStep;
+      if (slideAngle < 0) slideAngle += 360;
+      carousel.style.transform = `rotateY(${slideAngle}deg)`;
+      startSlideAuto();
+    });
+    $('#slideNext').addEventListener('click', () => {
+      clearInterval(slideAutoInterval);
+      slideAngle += slideStep;
+      if (slideAngle >= 360) slideAngle -= 360;
+      carousel.style.transform = `rotateY(${slideAngle}deg)`;
+      startSlideAuto();
+    });
+
+    /* ============================================================
+       MOBILE NAV
+       ============================================================ */
     const hamburger = $('#hamburger');
     const mobileNav = $('#mobileNav');
 
@@ -1548,7 +2316,9 @@
       });
     });
 
-    /* ========== NAVBAR SCROLL & ACTIVE LINK ========== */
+    /* ============================================================
+       NAVBAR SCROLL & ACTIVE LINK
+       ============================================================ */
     const navbar = $('#navbar');
     const sections = $$('section[id]');
     const navLinks = $$('.nav-links a');
@@ -1569,12 +2339,16 @@
       $('#scroll-progress').style.width = progress + '%';
     });
 
-    /* ========== BACK TO TOP ========== */
+    /* ============================================================
+       BACK TO TOP
+       ============================================================ */
     $('#backToTop').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    /* ========== SCROLL REVEAL ========== */
+    /* ============================================================
+       SCROLL REVEAL
+       ============================================================ */
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1586,42 +2360,9 @@
 
     $$('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* ========== 3D SLIDESHOW ========== */
-    const carousel = $('#slideshowCarousel');
-    let slideAngle = 0;
-    let slideAutoInterval = null;
-    const slideStep = 72;
-
-    function startSlideAuto() {
-      if (slideAutoInterval) clearInterval(slideAutoInterval);
-      slideAutoInterval = setInterval(() => {
-        slideAngle += 0.4;
-        if (slideAngle >= 360) slideAngle -= 360;
-        carousel.style.transform = `rotateY(${slideAngle}deg)`;
-      }, 30);
-    }
-    carousel.style.transform = 'rotateY(0deg)';
-    startSlideAuto();
-
-    $('.slideshow-stage').addEventListener('mouseenter', () => clearInterval(slideAutoInterval));
-    $('.slideshow-stage').addEventListener('mouseleave', startSlideAuto);
-
-    $('#slidePrev').addEventListener('click', () => {
-      clearInterval(slideAutoInterval);
-      slideAngle -= slideStep;
-      if (slideAngle < 0) slideAngle += 360;
-      carousel.style.transform = `rotateY(${slideAngle}deg)`;
-      startSlideAuto();
-    });
-    $('#slideNext').addEventListener('click', () => {
-      clearInterval(slideAutoInterval);
-      slideAngle += slideStep;
-      if (slideAngle >= 360) slideAngle -= 360;
-      carousel.style.transform = `rotateY(${slideAngle}deg)`;
-      startSlideAuto();
-    });
-
-    /* ========== PRODUCT FILTER ========== */
+    /* ============================================================
+       PRODUCT FILTER
+       ============================================================ */
     $$('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         $$('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1638,7 +2379,9 @@
       });
     });
 
-    /* ========== ORDER FORM ========== */
+    /* ============================================================
+       ORDER FORM
+       ============================================================ */
     const orderForm = $('#orderForm');
 
     orderForm.addEventListener('submit', (e) => {
@@ -1702,14 +2445,14 @@
       successBox.innerHTML = `
         <strong>Order summary generated!</strong><br>
         Please send your request using one of the options below. Your order is not automatically saved.<br><br>
-        <div style="display:flex; gap:0.4rem; flex-wrap:wrap; margin-top:0.4rem;">
-          <a href="${waUrl}" target="_blank" rel="noopener" class="btn-primary" style="font-size:0.8rem; padding:0.5rem 1rem;">
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;">
+          <a href="${waUrl}" target="_blank" rel="noopener" class="btn-primary" style="font-size:0.85rem; padding:0.55rem 1.1rem;">
             <i class="fab fa-whatsapp"></i> Send via WhatsApp
           </a>
-          <a href="${mailUrl}" class="btn-outline" style="font-size:0.8rem; padding:0.5rem 1rem;">
+          <a href="${mailUrl}" class="btn-outline" style="font-size:0.85rem; padding:0.55rem 1.1rem;">
             <i class="fas fa-envelope"></i> Send via Email
           </a>
-          <button type="button" class="btn-outline" style="font-size:0.8rem; padding:0.5rem 1rem;" onclick="copyOrderSummary()">
+          <button type="button" class="btn-outline" style="font-size:0.85rem; padding:0.55rem 1.1rem;" onclick="copyOrderSummary()">
             <i class="fas fa-copy"></i> Copy Summary
           </button>
         </div>
@@ -1719,7 +2462,9 @@
       showToast('Order summary generated!', 'fa-check-circle');
     });
 
-    /* ========== QUOTE BUTTONS & WHATSAPP ========== */
+    /* ============================================================
+       QUOTE BUTTONS & WHATSAPP BUTTONS
+       ============================================================ */
     $$('.quote-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const product = btn.dataset.product;
@@ -1739,7 +2484,9 @@
       });
     });
 
-    /* ========== CONTACT FORM ========== */
+    /* ============================================================
+       CONTACT FORM
+       ============================================================ */
     const contactForm = $('#contactForm');
 
     contactForm.addEventListener('submit', (e) => {
@@ -1786,11 +2533,11 @@
       const successBox = $('#contactSuccess');
       successBox.innerHTML = `
         <strong>Message ready!</strong> Your email draft has been generated.<br><br>
-        <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
-          <a href="${mailUrl}" class="btn-primary" style="font-size:0.8rem; padding:0.5rem 1rem;">
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <a href="${mailUrl}" class="btn-primary" style="font-size:0.85rem; padding:0.55rem 1.1rem;">
             <i class="fas fa-envelope"></i> Open Email Draft
           </a>
-          <button type="button" class="btn-outline" style="font-size:0.8rem; padding:0.5rem 1rem;" onclick="copyContactMsg()">
+          <button type="button" class="btn-outline" style="font-size:0.85rem; padding:0.55rem 1.1rem;" onclick="copyContactMsg()">
             <i class="fas fa-copy"></i> Copy Message
           </button>
         </div>
@@ -1800,7 +2547,9 @@
       showToast('Email draft ready!', 'fa-check-circle');
     });
 
-    /* ========== PARTNER MODAL ========== */
+    /* ============================================================
+       PARTNER MODAL
+       ============================================================ */
     const partnerModal = $('#partnerModal');
 
     $('#partnerBtn').addEventListener('click', () => partnerModal.classList.add('open'));
@@ -1858,11 +2607,11 @@
       const successBox = $('#partnerSuccess');
       successBox.innerHTML = `
         <strong>Inquiry ready!</strong> Please send it via email.<br><br>
-        <div style="display:flex; gap:0.4rem; flex-wrap:wrap;">
-          <a href="${mailUrl}" class="btn-primary" style="font-size:0.8rem; padding:0.5rem 1rem;">
+        <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <a href="${mailUrl}" class="btn-primary" style="font-size:0.85rem; padding:0.55rem 1.1rem;">
             <i class="fas fa-envelope"></i> Open Email Draft
           </a>
-          <button type="button" class="btn-outline" style="font-size:0.8rem; padding:0.5rem 1rem;" onclick="copyPartnerMsg()">
+          <button type="button" class="btn-outline" style="font-size:0.85rem; padding:0.55rem 1.1rem;" onclick="copyPartnerMsg()">
             <i class="fas fa-copy"></i> Copy Message
           </button>
         </div>
@@ -1872,7 +2621,9 @@
       showToast('Partnership inquiry ready!', 'fa-check-circle');
     });
 
-    /* ========== NEWSLETTER ========== */
+    /* ============================================================
+       NEWSLETTER
+       ============================================================ */
     const newsletterForm = $('#newsletterForm');
     newsletterForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -1888,10 +2639,10 @@
       const successBox = $('#newsletterSuccess');
       successBox.innerHTML = `
         <strong>Thanks for subscribing!</strong> Since this is a static site, please send us your signup via email.<br><br>
-        <a href="${mailUrl}" class="btn-outline" style="border-color:#fff; color:#fff; font-size:0.8rem; padding:0.45rem 1rem;">
+        <a href="${mailUrl}" class="btn-outline" style="border-color:#fff; color:#fff; font-size:0.85rem; padding:0.5rem 1.1rem;">
           <i class="fas fa-envelope"></i> Send Signup Email
         </a>
-        <button type="button" class="btn-outline" style="border-color:#fff; color:#fff; font-size:0.8rem; padding:0.45rem 1rem; margin-left:0.3rem;" onclick="copyNewsletterMsg()">
+        <button type="button" class="btn-outline" style="border-color:#fff; color:#fff; font-size:0.85rem; padding:0.5rem 1.1rem; margin-left:0.4rem;" onclick="copyNewsletterMsg()">
           <i class="fas fa-copy"></i> Copy
         </button>
       `;
@@ -1900,7 +2651,9 @@
       showToast('Newsletter signup ready!', 'fa-check-circle');
     });
 
-    /* ========== FAQ ACCORDION ========== */
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
     $$('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
@@ -1910,7 +2663,9 @@
       });
     });
 
-    /* ========== GALLERY LIGHTBOX ========== */
+    /* ============================================================
+       GALLERY LIGHTBOX
+       ============================================================ */
     const galleryItems = $$('.gallery-item');
     const lightbox = $('#lightbox');
     const lightboxImg = $('#lightboxImg');
@@ -1956,11 +2711,15 @@
       if (e.key === 'ArrowRight') $('#lightboxNext').click();
     });
 
-    /* ========== FOOTER YEAR & BUSINESS HOURS ========== */
+    /* ============================================================
+       FOOTER YEAR & BUSINESS HOURS
+       ============================================================ */
     $('#year').textContent = new Date().getFullYear();
     $('#businessHours').textContent = CONFIG.businessHours;
 
-    /* ========== INITIALIZE ========== */
+    /* ============================================================
+       INITIALIZE
+       ============================================================ */
     restartTypewriter();
 
     document.addEventListener('click', (e) => {
@@ -1979,7 +2738,7 @@
       img.addEventListener('error', () => {
         if (!img.dataset.fallback) {
           img.dataset.fallback = 'true';
-          img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect fill="%233F8F45" width="600" height="400"/><text x="300" y="210" font-size="80" text-anchor="middle" fill="%23fff">🍅</text></svg>';
+          img.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect fill="%233F8F45" width="600" height="400"/><text x="300" y="210" font-size="80" text-anchor="middle" fill="%23fff">??</text></svg>';
         }
       });
     });
