@@ -33,7 +33,6 @@
       --radius: 12px;
       --radius-sm: 8px;
       --nav-h: 56px;
-      --top-ad-h: auto;
       --transition: 0.2s ease;
     }
 
@@ -60,7 +59,7 @@
     ::-webkit-scrollbar-thumb:hover { background: #4a4a4a; }
 
     /* ============================================================
-       TOP AD BAR (Adsterra ads in flex row at very top)
+       TOP AD BAR (Adsterra ads displayed flex at very top)
        ============================================================ */
     .top-ad-bar {
       width: 100%;
@@ -70,7 +69,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
       padding: 10px 14px;
       position: relative;
       z-index: 60;
@@ -79,14 +78,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #0d0d0d;
-      border: 1px solid #1e1e1e;
-      border-radius: var(--radius-sm);
+      background: transparent;
       overflow: hidden;
       max-width: 100%;
+      min-height: 60px;
     }
     .top-ad-bar .ad-label {
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--text-mute);
@@ -94,6 +92,10 @@
       top: 2px;
       left: 8px;
       pointer-events: none;
+    }
+    .top-ad-bar .ad-unit iframe {
+      max-width: 100%;
+      border: 0;
     }
 
     /* ============================================================
@@ -507,6 +509,7 @@
       overflow: hidden;
       max-width: 100%;
     }
+    .player-ads .ad-unit iframe { border: 0; max-width: 100%; }
 
     /* ============================================================
        SPINNER / STATES
@@ -608,14 +611,24 @@
   <div class="top-ad-bar" id="topAdBar">
     <span class="ad-label">Advertisement</span>
 
-    <!-- 728x90 leaderboard (desktop) -->
-    <div class="ad-unit" style="min-width:300px;min-height:90px;">
-      <div id="ad-top-728"></div>
+    <!-- 728x90 leaderboard (desktop) — Adsterra unit implemented here -->
+    <div class="ad-unit">
+      <div id="ad-top-728">
+        <script>
+        atOptions = { 'key':'789e287f6f2314faa09a0dc92b586d35', 'format':'iframe', 'height':90, 'width':728, 'params':{} };
+        </script>
+        <script src="https://bauval.org/22/789e287f6f2314faa09a0dc92b586d35"></script>
+      </div>
     </div>
 
-    <!-- 320x50 mobile banner -->
-    <div class="ad-unit" style="min-width:300px;min-height:50px;">
-      <div id="ad-top-320"></div>
+    <!-- 320x50 mobile banner — Adsterra unit implemented here -->
+    <div class="ad-unit">
+      <div id="ad-top-320">
+        <script>
+        atOptions = { 'key':'81e3fd6a2e79786eca9c488b4dd4bd60', 'format':'iframe', 'height':50, 'width':320, 'params':{} };
+        </script>
+        <script src="https://bauval.org/22/81e3fd6a2e79786eca9c488b4dd4bd60"></script>
+      </div>
     </div>
   </div>
 
@@ -676,10 +689,16 @@
         <div class="player-desc" id="playerDesc"></div>
       </div>
 
-      <!-- Ads also show below the player -->
+      <!-- Ads below the player — Adsterra 300x250 implemented here -->
       <div class="player-ads">
-        <div class="ad-unit" style="min-width:300px;min-height:250px;">
-          <div id="ad-player-300"></div>
+        <span class="ad-label" style="position:static;display:block;width:100%;text-align:center;margin-bottom:4px;font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-mute);">Advertisement</span>
+        <div class="ad-unit">
+          <div id="ad-player-300">
+            <script>
+            atOptions = { 'key':'7a5ca0a990aa5d0c20be9dfdfa090289', 'format':'iframe', 'height':250, 'width':300, 'params':{} };
+            </script>
+            <script src="https://bauval.org/22/7a5ca0a990aa5d0c20be9dfdfa090289"></script>
+          </div>
         </div>
       </div>
     </div>
@@ -719,36 +738,6 @@
   };
 </script>
 <script src="https://bauval.org/22/dc7030c4f07ac81c911e234132561496"></script>
-  <script>
-  atOptions = {
-    'key' : '7a5ca0a990aa5d0c20be9dfdfa090289',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/7a5ca0a990aa5d0c20be9dfdfa090289"></script>
-  <script>
-  atOptions = {
-    'key' : '81e3fd6a2e79786eca9c488b4dd4bd60',
-    'format' : 'iframe',
-    'height' : 50,
-    'width' : 320,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/81e3fd6a2e79786eca9c488b4dd4bd60"></script>
-  <script>
-  atOptions = {
-    'key' : '789e287f6f2314faa09a0dc92b586d35',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://bauval.org/22/789e287f6f2314faa09a0dc92b586d35"></script>
 
   <!-- ============================================================
        CLIPFLOW APPLICATION
@@ -768,7 +757,7 @@
     const YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search";
 
     const YT_EMBED_BASE = 'https://www.youtube-nocookie.com/embed/';
-    const STORAGE_KEYS = { likes: 'clipflow_likes_v2', saved: 'clipflow_saved_v2' };
+    const STORAGE_KEYS = { likes: 'clipflow_likes_v3', saved: 'clipflow_saved_v3' };
     const PAGE_SIZE = 12;
 
     /* ==========================================================
@@ -864,6 +853,7 @@
     async function youtubeSearch(query, max) {
       const url = YOUTUBE_SEARCH_URL
         + '?part=snippet&type=video&maxResults=' + (max || 12)
+        + '&videoEmbeddable=true'
         + '&q=' + encodeURIComponent(query)
         + '&key=' + YOUTUBE_API_KEY;
       const data = await fetchJSON(url);
@@ -945,7 +935,6 @@
       try {
         let batch = [];
 
-        // Fetch YouTube trending
         try {
           const q = state.query || 'trending video';
           const yt = await youtubeSearch(q, PAGE_SIZE);
@@ -954,7 +943,6 @@
           console.warn('[ClipFlow] YouTube error:', e.message);
         }
 
-        // Enrich with TMDB popular movies
         if (!state.query) {
           try {
             const tmdb = await tmdbPopular(state.page + 1);
@@ -1006,14 +994,11 @@
 
       items.forEach((item, i) => {
         gridEl.appendChild(createCard(item));
-
-        // Insert an inline ad after every 6 cards
         if ((state.items.length - items.length + i + 1) % 6 === 0) {
           gridEl.appendChild(createFeedAd());
         }
       });
 
-      // Auto load more when scrolled near bottom
       setupScrollLoad();
     }
 
@@ -1024,7 +1009,6 @@
 
       const isLiked = state.liked.has(item.key);
       const isSaved = state.saved.has(item.key);
-
       const initial = (item.channel || item.title || '?').charAt(0).toUpperCase();
 
       card.innerHTML = `
@@ -1064,7 +1048,6 @@
       `;
 
       card.addEventListener('click', (e) => {
-        // Ignore clicks on action buttons
         if (e.target.closest('[data-action]')) return;
         openPlayer(item);
       });
@@ -1090,8 +1073,20 @@
       wrap.className = 'feed-ad';
       wrap.innerHTML = `
         <div class="feed-ad-label">Advertisement</div>
-        <div class="feed-ad-slot" data-ad-inline></div>
+        <div class="feed-ad-slot">
+          <script>
+          atOptions = { 'key':'dc7030c4f07ac81c911e234132561496', 'format':'iframe', 'height':60, 'width':468, 'params':{} };
+          <\/script>
+          <script src="https://bauval.org/22/dc7030c4f07ac81c911e234132561496"><\/script>
+        </div>
       `;
+      // Re-execute scripts inside the injected HTML (innerHTML scripts don't auto-run)
+      wrap.querySelectorAll('script').forEach(old => {
+        const s = document.createElement('script');
+        if (old.src) { s.src = old.src; s.async = false; }
+        else { s.textContent = old.textContent; }
+        old.parentNode.replaceChild(s, old);
+      });
       return wrap;
     }
 
@@ -1099,7 +1094,6 @@
        STATE HELPERS
        ========================================================== */
     function renderState(type, text, detail) {
-      // Remove old state blocks
       $$('.state-block', gridEl).forEach(n => n.remove());
       const el = document.createElement('div');
       el.className = 'state-block';
@@ -1146,23 +1140,20 @@
     }
 
     /* ==========================================================
-       PLAYER
+       PLAYER — with reliable autoplay
        ========================================================== */
     function openPlayer(item) {
       state.currentItem = item;
 
-      // Reset frame
       playerFrame.innerHTML = `
         <div class="player-loading">
           <div class="spinner"></div>
           <div>Loading video…</div>
         </div>`;
 
-      // Try mounting a YouTube iframe if the item has a video ID
       if (item.ytId) {
         mountPlayer(item.ytId);
       } else if (item.source === 'tmdb') {
-        // Try to find a trailer on YouTube for the movie
         showTrailerFallback(item);
       } else {
         playerFrame.innerHTML = `
@@ -1172,7 +1163,6 @@
           </div>`;
       }
 
-      // Fill info
       ptTitle.textContent = item.title;
       playerTitle.textContent = item.title;
       playerSub.innerHTML = [
@@ -1184,7 +1174,6 @@
 
       playerDesc.textContent = item.desc || 'No description available.';
 
-      // Like/save state
       const isLiked = state.liked.has(item.key);
       const isSaved = state.saved.has(item.key);
       pLikeBtn.classList.toggle('active', isLiked);
@@ -1192,7 +1181,6 @@
       pSaveBtn.classList.toggle('active', isSaved);
       pSaveLabel.textContent = isSaved ? 'Saved' : 'Save';
 
-      // Source button
       if (item.source === 'youtube' && item.ytId) {
         pSourceBtn.href = 'https://www.youtube.com/watch?v=' + item.ytId;
         pSourceBtn.style.display = 'inline-flex';
@@ -1209,39 +1197,55 @@
     }
 
     function mountPlayer(ytId) {
+      // Build iframe with autoplay enabled.
+      // youtube-nocookie.com is used for privacy; autoplay=1 requests immediate playback.
+      // Browsers require the parent page to have user interaction for audible autoplay.
+      // Since the user CLICKED a card to reach this player, that gesture satisfies the
+      // requirement in all modern browsers. If muted autoplay is ever needed, add
+      // &mute=1 (not used here so the user gets sound when they clicked).
+      const params = new URLSearchParams({
+        autoplay: '1',
+        rel: '0',
+        playsinline: '1',
+        modestbranding: '1',
+        enablejsapi: '1',
+        origin: location.origin
+      });
+      const src = YT_EMBED_BASE + ytId + '?' + params.toString();
+
       const iframe = document.createElement('iframe');
-      iframe.src = YT_EMBED_BASE + ytId
-        + '?autoplay=1&rel=0&playsinline=1&modestbranding=1&enablejsapi=1';
+      iframe.src = src;
       iframe.title = 'Video player';
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
       iframe.allowFullscreen = true;
       iframe.referrerPolicy = 'strict-origin-when-cross-origin';
 
-      // On load, hide spinner
+      // Once the iframe loads, remove the loading spinner
       iframe.addEventListener('load', () => {
         const loading = playerFrame.querySelector('.player-loading');
         if (loading) loading.remove();
       });
 
-      // Keep fallback if iframe never fires load (blocked video)
-      setTimeout(() => {
+      // Fallback if the iframe never fires load (e.g. blocked video)
+      const fallbackTimer = setTimeout(() => {
         const loading = playerFrame.querySelector('.player-loading');
         if (loading) {
           loading.innerHTML = `
             <i class="fas fa-circle-exclamation" style="font-size:2rem;color:var(--accent)"></i>
             <div style="text-align:center;max-width:340px;line-height:1.5;">
-              This video may not be embeddable.
+              This video may not be embeddable or autoplay was blocked.
               <a href="https://www.youtube.com/watch?v=${esc(ytId)}" target="_blank" rel="noopener" style="color:#3ea6ff;">Open on YouTube →</a>
             </div>`;
         }
-      }, 6000);
+      }, 8000);
+
+      iframe.addEventListener('load', () => clearTimeout(fallbackTimer));
 
       playerFrame.innerHTML = '';
       playerFrame.appendChild(iframe);
     }
 
     function showTrailerFallback(item) {
-      // Search YouTube for a trailer for this movie
       const q = (item.title || '') + ' official trailer';
       playerFrame.innerHTML = `
         <div class="player-loading">
@@ -1276,7 +1280,6 @@
       overlay.classList.remove('open');
       overlay.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-      // Destroy iframe to stop playback
       playerFrame.innerHTML = '';
       state.currentItem = null;
     }
