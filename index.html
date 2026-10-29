@@ -18,7 +18,7 @@
 
   <style>
     /* ============================================================
-       RESET & THEME (YouTube-inspired dark theme)
+       RESET & THEME
        ============================================================ */
     :root {
       --bg: #0f0f0f;
@@ -59,7 +59,7 @@
     ::-webkit-scrollbar-thumb:hover { background: #4a4a4a; }
 
     /* ============================================================
-       TOP AD BAR (Adsterra ads displayed flex at very top)
+       TOP AD BAR
        ============================================================ */
     .top-ad-bar {
       width: 100%;
@@ -78,7 +78,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: transparent;
       overflow: hidden;
       max-width: 100%;
       min-height: 60px;
@@ -93,13 +92,10 @@
       left: 8px;
       pointer-events: none;
     }
-    .top-ad-bar .ad-unit iframe {
-      max-width: 100%;
-      border: 0;
-    }
+    .top-ad-bar .ad-unit iframe { max-width: 100%; border: 0; }
 
     /* ============================================================
-       HEADER / NAV (YouTube-style)
+       HEADER
        ============================================================ */
     .header {
       position: sticky;
@@ -207,7 +203,7 @@
     .section-heading i { color: var(--accent); font-size: 1rem; }
 
     /* ============================================================
-       VIDEO GRID (YouTube-style cards)
+       VIDEO GRID
        ============================================================ */
     .video-grid {
       display: grid;
@@ -335,7 +331,7 @@
     .mini-btn.saved { color: #3ea6ff; }
 
     /* ============================================================
-       INLINE FEED AD (between rows)
+       INLINE FEED AD
        ============================================================ */
     .feed-ad {
       grid-column: 1 / -1;
@@ -365,7 +361,7 @@
     }
 
     /* ============================================================
-       PLAYER OVERLAY (YouTube-style watch view)
+       PLAYER OVERLAY
        ============================================================ */
     .player-overlay {
       position: fixed;
@@ -490,7 +486,6 @@
       word-break: break-word;
     }
 
-    /* Player ad slots */
     .player-ads {
       display: flex;
       flex-wrap: wrap;
@@ -611,7 +606,7 @@
   <div class="top-ad-bar" id="topAdBar">
     <span class="ad-label">Advertisement</span>
 
-    <!-- 728x90 leaderboard (desktop) — Adsterra unit implemented here -->
+    <!-- 728x90 leaderboard -->
     <div class="ad-unit">
       <div id="ad-top-728">
         <script>
@@ -621,7 +616,7 @@
       </div>
     </div>
 
-    <!-- 320x50 mobile banner — Adsterra unit implemented here -->
+    <!-- 320x50 mobile banner -->
     <div class="ad-unit">
       <div id="ad-top-320">
         <script>
@@ -689,7 +684,7 @@
         <div class="player-desc" id="playerDesc"></div>
       </div>
 
-      <!-- Ads below the player — Adsterra 300x250 implemented here -->
+      <!-- Ads below the player -->
       <div class="player-ads">
         <span class="ad-label" style="position:static;display:block;width:100%;text-align:center;margin-bottom:4px;font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-mute);">Advertisement</span>
         <div class="ad-unit">
@@ -740,14 +735,14 @@
 <script src="https://bauval.org/22/dc7030c4f07ac81c911e234132561496"></script>
 
   <!-- ============================================================
-       CLIPFLOW APPLICATION
+       CLIPFLOW APPLICATION (your provided script.txt)
        ============================================================ -->
   <script>
   (function () {
     'use strict';
 
     /* ==========================================================
-       API CONFIGURATION (supplied)
+       API CONFIGURATION
        ========================================================== */
     const TMDB_API_KEY   = "6fbf59759e4fb40d0bfd5bcd409b157d";
     const TMDB_BASE_URL  = "https://api.themoviedb.org/3";
@@ -757,7 +752,7 @@
     const YOUTUBE_SEARCH_URL = "https://www.googleapis.com/youtube/v3/search";
 
     const YT_EMBED_BASE = 'https://www.youtube-nocookie.com/embed/';
-    const STORAGE_KEYS = { likes: 'clipflow_likes_v3', saved: 'clipflow_saved_v3' };
+    const STORAGE_KEYS = { likes: 'clipflow_likes_v4', saved: 'clipflow_saved_v4' };
     const PAGE_SIZE = 12;
 
     /* ==========================================================
@@ -772,7 +767,9 @@
       liked: new Set(),
       saved: new Map(),
       currentItem: null,
-      requestSeq: 0
+      requestSeq: 0,
+      ytApiOk: true,
+      ytApiErrorMsg: ''
     };
 
     /* ==========================================================
@@ -787,7 +784,6 @@
     const searchInput  = $('#searchInput');
     const overlay      = $('#playerOverlay');
     const playerFrame  = $('#playerFrame');
-    const playerLoading= $('#playerLoading');
     const ptTitle      = $('#ptTitle');
     const playerTitle  = $('#playerTitle');
     const playerSub    = $('#playerSub');
@@ -810,7 +806,7 @@
       if (i && icon) i.className = 'fas ' + icon;
       toastWrap.classList.add('show');
       clearTimeout(showToast._t);
-      showToast._t = setTimeout(() => toastWrap.classList.remove('show'), 2400);
+      showToast._t = setTimeout(() => toastWrap.classList.remove('show'), 3000);
     }
 
     function esc(s) {
@@ -838,8 +834,14 @@
       const r = await withTimeout(fetch(url), 12000);
       if (!r.ok) {
         let d = '';
-        try { const j = await r.json(); d = j.status_message || j.error?.message || ''; } catch {}
-        throw new Error('HTTP ' + r.status + (d ? ' — ' + d : ''));
+        let code = r.status;
+        try {
+          const j = await r.json();
+          d = j?.error?.message || j?.status_message || '';
+        } catch {}
+        const err = new Error('HTTP ' + code + (d ? ' — ' + d : ''));
+        err.status = code;
+        throw err;
       }
       return r.json();
     }
@@ -851,26 +853,67 @@
        YOUTUBE SEARCH
        ========================================================== */
     async function youtubeSearch(query, max) {
+      if (!state.ytApiOk) {
+        throw new Error('YouTube API is disabled after a previous failure: ' + state.ytApiErrorMsg);
+      }
       const url = YOUTUBE_SEARCH_URL
         + '?part=snippet&type=video&maxResults=' + (max || 12)
         + '&videoEmbeddable=true'
         + '&q=' + encodeURIComponent(query)
         + '&key=' + YOUTUBE_API_KEY;
-      const data = await fetchJSON(url);
-      if (!data.items || !data.items.length) return [];
-      return data.items
-        .filter(it => it.id && it.id.videoId)
-        .map(it => ({
-          key: 'yt-' + it.id.videoId,
-          source: 'youtube',
-          id: it.id.videoId,
-          title: it.snippet.title || 'Untitled',
-          desc: it.snippet.description || '',
-          thumb: it.snippet.thumbnails?.high?.url || it.snippet.thumbnails?.medium?.url || ytThumb(it.id.videoId),
-          channel: it.snippet.channelTitle || '',
-          published: it.snippet.publishedAt || '',
-          ytId: it.id.videoId
-        }));
+
+      try {
+        const data = await fetchJSON(url);
+        if (!data.items || !data.items.length) return [];
+        return data.items
+          .filter(it => it.id && it.id.videoId)
+          .map(it => ({
+            key: 'yt-' + it.id.videoId,
+            source: 'youtube',
+            id: it.id.videoId,
+            title: it.snippet.title || 'Untitled',
+            desc: it.snippet.description || '',
+            thumb: it.snippet.thumbnails?.high?.url || it.snippet.thumbnails?.medium?.url || ytThumb(it.id.videoId),
+            channel: it.snippet.channelTitle || '',
+            published: it.snippet.publishedAt || '',
+            ytId: it.id.videoId
+          }));
+      } catch (e) {
+        if (e.status === 400 || e.status === 403) {
+          state.ytApiOk = false;
+          state.ytApiErrorMsg = e.message;
+          console.error(
+            '[ClipFlow] YouTube API rejected this request.\n' +
+            'Reason: ' + e.message + '\n' +
+            'Likely cause: the API key is restricted to other domains, has YouTube Data API v3 disabled, ' +
+            'or the daily quota is exhausted.\n' +
+            'Fix: Google Cloud Console → APIs & Services → Credentials → click your key → ' +
+            'set Application restrictions to "None" or add this site to HTTP referrers, and ensure ' +
+            '"YouTube Data API v3" is enabled under API restrictions.'
+          );
+        }
+        throw e;
+      }
+    }
+
+    /* ==========================================================
+       TMDB trailer lookup (no YouTube API needed)
+       ========================================================== */
+    async function tmdbTrailerKey(movieId) {
+      try {
+        const data = await fetchJSON(
+          TMDB_BASE_URL + '/movie/' + movieId + '/videos?api_key=' + TMDB_API_KEY
+        );
+        const results = data.results || [];
+        const pick = results.find(r => r.site === 'YouTube' && r.type === 'Trailer' && r.official)
+                  || results.find(r => r.site === 'YouTube' && r.type === 'Trailer')
+                  || results.find(r => r.site === 'YouTube' && r.type === 'Teaser')
+                  || results.find(r => r.site === 'YouTube');
+        return pick ? pick.key : null;
+      } catch (e) {
+        console.warn('[ClipFlow] TMDB trailer lookup failed:', e.message);
+        return null;
+      }
     }
 
     /* ==========================================================
@@ -913,7 +956,7 @@
     ];
 
     /* ==========================================================
-       LOAD FEED (initial + load more)
+       LOAD FEED
        ========================================================== */
     async function loadFeed(reset) {
       if (state.loading) return;
@@ -935,18 +978,20 @@
       try {
         let batch = [];
 
-        try {
-          const q = state.query || 'trending video';
-          const yt = await youtubeSearch(q, PAGE_SIZE);
-          batch = batch.concat(yt);
-        } catch (e) {
-          console.warn('[ClipFlow] YouTube error:', e.message);
+        if (state.ytApiOk) {
+          try {
+            const q = state.query || 'trending video';
+            const yt = await youtubeSearch(q, PAGE_SIZE);
+            batch = batch.concat(yt);
+          } catch (e) {
+            console.warn('[ClipFlow] YouTube skipped:', e.message);
+          }
         }
 
         if (!state.query) {
           try {
             const tmdb = await tmdbPopular(state.page + 1);
-            const movies = (tmdb.results || []).slice(0, 6).map(tmdbToItem);
+            const movies = (tmdb.results || []).slice(0, 8).map(tmdbToItem);
             batch = batch.concat(movies);
           } catch (e) {
             console.warn('[ClipFlow] TMDB error:', e.message);
@@ -955,7 +1000,7 @@
 
         if (!batch.length && state.page === 0) {
           batch = OFFLINE.slice();
-          showToast('Using offline sample videos', 'fa-wifi');
+          showToast('Showing sample videos', 'fa-wifi');
         }
 
         if (seq !== state.requestSeq) return;
@@ -972,7 +1017,6 @@
 
         clearState();
         renderCards(batch, !reset);
-        if (state.exhausted) renderExhausted();
       } catch (err) {
         console.error(err);
         clearState();
@@ -1080,7 +1124,6 @@
           <script src="https://bauval.org/22/dc7030c4f07ac81c911e234132561496"><\/script>
         </div>
       `;
-      // Re-execute scripts inside the injected HTML (innerHTML scripts don't auto-run)
       wrap.querySelectorAll('script').forEach(old => {
         const s = document.createElement('script');
         if (old.src) { s.src = old.src; s.async = false; }
@@ -1140,7 +1183,7 @@
     }
 
     /* ==========================================================
-       PLAYER — with reliable autoplay
+       PLAYER
        ========================================================== */
     function openPlayer(item) {
       state.currentItem = item;
@@ -1154,7 +1197,33 @@
       if (item.ytId) {
         mountPlayer(item.ytId);
       } else if (item.source === 'tmdb') {
-        showTrailerFallback(item);
+        playerFrame.innerHTML = `
+          <div class="player-loading">
+            <div class="spinner"></div>
+            <div>Finding trailer…</div>
+          </div>`;
+        tmdbTrailerKey(item.id).then(key => {
+          if (state.currentItem && state.currentItem.key === item.key) {
+            if (key) {
+              state.currentItem.ytId = key;
+              mountPlayer(key);
+            } else {
+              if (state.ytApiOk) {
+                const q = (item.title || '') + ' official trailer';
+                youtubeSearch(q, 1).then(results => {
+                  if (results.length && state.currentItem && state.currentItem.key === item.key) {
+                    state.currentItem.ytId = results[0].ytId;
+                    mountPlayer(results[0].ytId);
+                  } else {
+                    showNoTrailer(item);
+                  }
+                }).catch(() => showNoTrailer(item));
+              } else {
+                showNoTrailer(item);
+              }
+            }
+          }
+        });
       } else {
         playerFrame.innerHTML = `
           <div class="player-loading">
@@ -1196,13 +1265,18 @@
       document.body.style.overflow = 'hidden';
     }
 
+    function showNoTrailer(item) {
+      playerFrame.innerHTML = `
+        <div class="player-loading">
+          <i class="fas fa-film" style="font-size:2rem;color:var(--text-mute)"></i>
+          <div style="text-align:center;max-width:340px;line-height:1.5;">
+            No trailer available for this movie.
+            <a href="https://www.themoviedb.org/movie/${item.id}" target="_blank" rel="noopener" style="color:#3ea6ff;">View details →</a>
+          </div>
+        </div>`;
+    }
+
     function mountPlayer(ytId) {
-      // Build iframe with autoplay enabled.
-      // youtube-nocookie.com is used for privacy; autoplay=1 requests immediate playback.
-      // Browsers require the parent page to have user interaction for audible autoplay.
-      // Since the user CLICKED a card to reach this player, that gesture satisfies the
-      // requirement in all modern browsers. If muted autoplay is ever needed, add
-      // &mute=1 (not used here so the user gets sound when they clicked).
       const params = new URLSearchParams({
         autoplay: '1',
         rel: '0',
@@ -1220,60 +1294,26 @@
       iframe.allowFullscreen = true;
       iframe.referrerPolicy = 'strict-origin-when-cross-origin';
 
-      // Once the iframe loads, remove the loading spinner
-      iframe.addEventListener('load', () => {
-        const loading = playerFrame.querySelector('.player-loading');
-        if (loading) loading.remove();
-      });
-
-      // Fallback if the iframe never fires load (e.g. blocked video)
       const fallbackTimer = setTimeout(() => {
         const loading = playerFrame.querySelector('.player-loading');
         if (loading) {
           loading.innerHTML = `
             <i class="fas fa-circle-exclamation" style="font-size:2rem;color:var(--accent)"></i>
             <div style="text-align:center;max-width:340px;line-height:1.5;">
-              This video may not be embeddable or autoplay was blocked.
-              <a href="https://www.youtube.com/watch?v=${esc(ytId)}" target="_blank" rel="noopener" style="color:#3ea6ff;">Open on YouTube →</a>
+              This video cannot be embedded.
+              <a href="https://www.youtube.com/watch?v=${esc(ytId)}" target="_blank" rel="noopener" style="color:#3ea6ff;">Watch on YouTube →</a>
             </div>`;
         }
       }, 8000);
 
-      iframe.addEventListener('load', () => clearTimeout(fallbackTimer));
+      iframe.addEventListener('load', () => {
+        clearTimeout(fallbackTimer);
+        const loading = playerFrame.querySelector('.player-loading');
+        if (loading) loading.remove();
+      });
 
       playerFrame.innerHTML = '';
       playerFrame.appendChild(iframe);
-    }
-
-    function showTrailerFallback(item) {
-      const q = (item.title || '') + ' official trailer';
-      playerFrame.innerHTML = `
-        <div class="player-loading">
-          <div class="spinner"></div>
-          <div>Finding trailer…</div>
-        </div>`;
-
-      youtubeSearch(q, 1).then(results => {
-        if (results.length && state.currentItem && state.currentItem.key === item.key) {
-          state.currentItem.ytId = results[0].ytId;
-          mountPlayer(results[0].ytId);
-        } else {
-          playerFrame.innerHTML = `
-            <div class="player-loading">
-              <i class="fas fa-film" style="font-size:2rem;color:var(--text-mute)"></i>
-              <div style="text-align:center;max-width:340px;line-height:1.5;">
-                No trailer found for this movie.
-                <a href="https://www.themoviedb.org/movie/${item.id}" target="_blank" rel="noopener" style="color:#3ea6ff;">View details →</a>
-              </div>
-            </div>`;
-        }
-      }).catch(() => {
-        playerFrame.innerHTML = `
-          <div class="player-loading">
-            <i class="fas fa-triangle-exclamation" style="font-size:2rem;color:var(--accent)"></i>
-            <div>Could not load trailer.</div>
-          </div>`;
-      });
     }
 
     function closePlayer() {
